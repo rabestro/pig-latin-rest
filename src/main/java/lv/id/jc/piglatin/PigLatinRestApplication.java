@@ -9,5 +9,4 @@ public class PigLatinRestApplication {
     public static void main(String[] args) {
         SpringApplication.run(PigLatinRestApplication.class, args);
     }
-
 }

@@ -83,6 +83,10 @@
     <properties>
         <java.version>21</java.version>
 
+        <swagger-api.version>2.2.19</swagger-api.version>
+        <swagger-ui.version>5.10.3</swagger-ui.version>
+        <springdoc.version>2.3.0</springdoc.version>
+
         <sonar.language>java,groovy,xml</sonar.language>
         <sonar.java.source>${java.version}</sonar.java.source>
         <sonar.organization>rabestro</sonar.organization>
@@ -91,6 +95,43 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- Swagger dependencies -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-core-jakarta</artifactId>
+                <version>${swagger-api.version}</version>
+            </dependency>
+            <!-- Swagger UI -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>swagger-ui</artifactId>
+                <version>${swagger-ui.version}</version>
+            </dependency>
+
+            <!-- SpringDoc OpenAPI UI -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-common</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+
+            <!-- JsonNullable Jackson Module -->
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>0.2.6</version>
+            </dependency>
+
             <!-- Spock Framework (Bill of Materials) -->
             <dependency>
                 <groupId>org.spockframework</groupId>
@@ -121,10 +162,44 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- SpringDoc OpenAPI dependencies -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- swagger-ui dependencies -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>swagger-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
         </dependency>
     </dependencies>
 
@@ -142,7 +217,7 @@
                             <include>**/*Spec</include>
                         </includes>
                         <statelessTestsetReporter
-                                implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
                             <disable>false</disable>
                             <version>3.0</version>
                             <usePhrasedFileName>false</usePhrasedFileName>
@@ -213,6 +288,56 @@
                                 <format>XML</format>
                                 <format>HTML</format>
                             </formats>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>7.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>
+                                ${project.basedir}/src/main/resources/static/api.yaml
+                            </inputSpec>
+                            <!-- target to generate java server code -->
+                            <generatorName>spring</generatorName>
+                            <!-- pass any necessary config options -->
+                            <!-- <output>${project.basedir}/src/gen/java/main</output>-->
+                            <configOptions>
+                                <useSpringBoot3>true</useSpringBoot3>
+<!--                                <apiFirst>true</apiFirst>-->
+                                <documentationProvider>springdoc</documentationProvider>
+                                <basePackage>lv.id.jc.piglatin</basePackage>
+                                <apiPackage>lv.id.jc.piglatin.api</apiPackage>
+                                <modelPackage>lv.id.jc.piglatin.model</modelPackage>
+                                <apiNullable>true</apiNullable>
+                                <interfaceOnly>true</interfaceOnly>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/target/generated-sources/openapi/src/main/java</source>
+                            </sources>
                         </configuration>
                     </execution>
                 </executions>
