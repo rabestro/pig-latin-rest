@@ -1,0 +1,9 @@
+spring.application.name: pig-latin
+
+server:
+  servlet:
+    context-path: /
+
+springdoc:
+  swagger-ui:
+    url: /api.yaml
