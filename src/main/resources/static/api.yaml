@@ -14,7 +14,7 @@ info:
     email: jegors.cemisovs@gmail.com
     url: 'https://jc.id.lv'
 servers:
-  - url: 'https://localhost:8080'
+  - url: 'http://localhost:8080'
     description: Local server
 externalDocs:
     description: Pig Latin exercise on Exercism
