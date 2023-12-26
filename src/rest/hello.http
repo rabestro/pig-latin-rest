@@ -1,0 +1,8 @@
+### Translate to Pig Latin
+
+POST http://localhost:8080/pig-latin
+Content-Type: application/json
+
+{
+    "text": "Hello World"
+}
