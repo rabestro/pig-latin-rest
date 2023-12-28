@@ -82,6 +82,7 @@
 
     <properties>
         <java.version>21</java.version>
+        <groovy.version>4.0.17</groovy.version>
 
         <swagger-api.version>2.2.19</swagger-api.version>
         <swagger-ui.version>5.10.3</swagger-ui.version>
@@ -151,7 +152,7 @@
             <dependency>
                 <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy</artifactId>
-                <version>4.0.16</version>
+                <version>${groovy.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
@@ -242,6 +243,11 @@
                         </statelessTestsetReporter>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>3.2.3</version>
+                </plugin>
 
                 <!-- Mandatory plugins for using Spock -->
                 <plugin>
@@ -270,6 +276,43 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.11</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>4.8.2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>3.21.2</version>
+                </plugin>
+
+                <!-- Plugins for the site generation and deployment -->
+                <plugin>
+                    <artifactId>maven-scm-publish-plugin</artifactId>
+                    <version>3.2.1</version>
+                    <configuration>
+                        <scmBranch>gh-pages</scmBranch>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>3.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changelog-plugin</artifactId>
+                    <version>2.3</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -357,7 +400,10 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 
@@ -430,6 +476,7 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
             </plugin>
+
             <!-- Dependencies and version management -->
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -464,6 +511,10 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </reporting>
