@@ -14,18 +14,22 @@
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   @Component
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="WordTranslator" href="../../../../../lv/id/jc/piglatin/core/WordTranslator.html#WordTranslator">WordTranslator</a> <strong class="jxr_keyword">implements</strong> <a name="Translator" href="../../../../../lv/id/jc/piglatin/core/Translator.html#Translator">Translator</a> {
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>       <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Pattern RULES = Pattern.compile(
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>          <span class="jxr_string">"((?&lt;vowel&gt;[aeiou]|xr|yt)|"</span> +
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>          <span class="jxr_string">"(?&lt;consonant&gt;(?!xr|yt)y?(?:[^aeiouy]*qu|[^aeiouy]*)))"</span> +
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>          <span class="jxr_string">"(?&lt;body&gt;.*)"</span>
-<a class="jxr_linenumber" name="L13" href="#L13">13</a>      );
-<a class="jxr_linenumber" name="L14" href="#L14">14</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String TEMPLATE = <span class="jxr_string">"${vowel}${body}${consonant}ay"</span>;
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>  
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>      @Override
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">public</strong> String apply(String word) {
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>          <strong class="jxr_keyword">return</strong> RULES.matcher(word).replaceFirst(TEMPLATE);
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>      }
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  }
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>       <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Pattern RULES = Pattern.compile(<span class="jxr_string">""</span><span class="jxr_string">"
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>          (?:
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>              (?&lt;vowel&gt;[aeiou]|xr|yt)
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>              |
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>              (?&lt;consonant&gt;y?(?:[^aeiouy]*qu|[^aeiouy]*))
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>          )
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>          (?&lt;body&gt;.*)
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>          <span class="jxr_string">""</span><span class="jxr_string">", Pattern.CASE_INSENSITIVE | Pattern.COMMENTS
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      );
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String TEMPLATE = <span class="jxr_string">"${vowel}${body}${consonant}ay"</span>;
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      @Override
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <strong class="jxr_keyword">public</strong> String apply(String word) {
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>          <strong class="jxr_keyword">return</strong> RULES.matcher(word).replaceFirst(TEMPLATE);
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>      }
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2023 <a href="https://www.epam.com">EPAM Systems</a>. All rights reserved.</div>

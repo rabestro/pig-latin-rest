@@ -6,16 +6,20 @@ import org.springframework.stereotype.Component;
 
 @Component
 <span class="fc" id="L8">public class WordTranslator implements Translator {</span>
-<span class="fc" id="L9">    private static final Pattern RULES = Pattern.compile(</span>
-        &quot;((?&lt;vowel&gt;[aeiou]|xr|yt)|&quot; +
-        &quot;(?&lt;consonant&gt;(?!xr|yt)y?(?:[^aeiouy]*qu|[^aeiouy]*)))&quot; +
-        &quot;(?&lt;body&gt;.*)&quot;
+<span class="fc" id="L9">    private static final Pattern RULES = Pattern.compile(&quot;&quot;&quot;</span>
+        (?:
+            (?&lt;vowel&gt;[aeiou]|xr|yt)
+            |
+            (?&lt;consonant&gt;y?(?:[^aeiouy]*qu|[^aeiouy]*))
+        )
+        (?&lt;body&gt;.*)
+        &quot;&quot;&quot;, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS
     );
     private static final String TEMPLATE = &quot;${vowel}${body}${consonant}ay&quot;;
 
     @Override
     public String apply(String word) {
-<span class="fc" id="L18">        return RULES.matcher(word).replaceFirst(TEMPLATE);</span>
+<span class="fc" id="L22">        return RULES.matcher(word).replaceFirst(TEMPLATE);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

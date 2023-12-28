@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 PigLatin REST,lv.id.jc.piglatin.model,TranslationResponse,89,0,8,0,25,0,13,0,9,0
 PigLatin REST,lv.id.jc.piglatin.model,TranslationRequest,89,0,8,0,25,0,13,0,9,0
-PigLatin REST,lv.id.jc.piglatin.core,WordTranslator,0,13,0,0,0,3,0,3,0,3
+PigLatin REST,lv.id.jc.piglatin.core,WordTranslator,0,14,0,0,0,3,0,3,0,3
 PigLatin REST,lv.id.jc.piglatin.core,WordsMatcher,0,12,0,0,0,4,0,3,0,3
 PigLatin REST,lv.id.jc.piglatin.core,PigLatinTranslator,0,20,0,0,0,6,0,2,0,2
 PigLatin REST,lv.id.jc.piglatin.controller,PigLatinController,17,6,0,0,3,3,1,1,1,1
