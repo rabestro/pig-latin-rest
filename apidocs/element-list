@@ -2,5 +2,6 @@ lv.id.jc.piglatin
 lv.id.jc.piglatin.api
 lv.id.jc.piglatin.controller
 lv.id.jc.piglatin.core
+lv.id.jc.piglatin.domain
 lv.id.jc.piglatin.model
 lv.id.jc.piglatin.service

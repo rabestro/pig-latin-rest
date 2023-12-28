@@ -78,9 +78,9 @@
 <th><img src="images/icon_warning_sml.gif" alt="" />&#160;Warnings</th>
 <th><img src="images/icon_error_sml.gif" alt="" />&#160;Errors</th></tr>
 <tr class="b">
-<td align="left">7</td>
+<td align="left">12</td>
 <td>0</td>
-<td>31</td>
+<td>82</td>
 <td>0</td></tr></table></section><section>
 <h3><a name="Files"></a>Files</h3><a name="Files"></a>
 <table border="0" class="bodyTable">
@@ -92,7 +92,7 @@
 <tr class="b">
 <td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2FPigLatinRestApplication.java">lv/id/jc/piglatin/PigLatinRestApplication.java</a></td>
 <td>0</td>
-<td>4</td>
+<td>10</td>
 <td>0</td></tr>
 <tr class="a">
 <td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fcontroller.2FPigLatinController.java">lv/id/jc/piglatin/controller/PigLatinController.java</a></td>
@@ -102,9 +102,34 @@
 <tr class="b">
 <td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FPigLatinTranslator.java">lv/id/jc/piglatin/core/PigLatinTranslator.java</a></td>
 <td>0</td>
-<td>6</td>
+<td>13</td>
 <td>0</td></tr>
 <tr class="a">
+<td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FTranslator.java">lv/id/jc/piglatin/core/Translator.java</a></td>
+<td>0</td>
+<td>1</td>
+<td>0</td></tr>
+<tr class="b">
+<td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordTranslator.java">lv/id/jc/piglatin/core/WordTranslator.java</a></td>
+<td>0</td>
+<td>9</td>
+<td>0</td></tr>
+<tr class="a">
+<td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordValidation.java">lv/id/jc/piglatin/core/WordValidation.java</a></td>
+<td>0</td>
+<td>12</td>
+<td>0</td></tr>
+<tr class="b">
+<td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordsMatcher.java">lv/id/jc/piglatin/core/WordsMatcher.java</a></td>
+<td>0</td>
+<td>5</td>
+<td>0</td></tr>
+<tr class="a">
+<td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fdomain.2FWord.java">lv/id/jc/piglatin/domain/Word.java</a></td>
+<td>0</td>
+<td>11</td>
+<td>0</td></tr>
+<tr class="b">
 <td align="left"><a href="#lv.2Fid.2Fjc.2Fpiglatin.2Fservice.2FPigLatinService.java">lv/id/jc/piglatin/service/PigLatinService.java</a></td>
 <td>0</td>
 <td>11</td>
@@ -124,7 +149,7 @@
 <li>sortImportsInGroupAlphabetically: <code>&quot;true&quot;</code></li>
 <li>customImportOrderRules: <code>&quot;STATIC###THIRD_PARTY_PACKAGE&quot;</code></li>
 <li>tokens: <code>&quot;IMPORT, STATIC_IMPORT, PACKAGE_DEF&quot;</code></li></ul></td>
-<td>5</td>
+<td>15</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="a">
 <td align="left">indentation</td>
@@ -136,16 +161,34 @@
 <li>basicOffset: <code>&quot;2&quot;</code></li>
 <li>braceAdjustment: <code>&quot;2&quot;</code></li>
 <li>lineWrappingIndentation: <code>&quot;4&quot;</code></li></ul></td>
-<td>22</td>
+<td>53</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="b">
 <td align="left">javadoc</td>
+<td><a class="externalLink" href="https://checkstyle.org/config_javadoc.html#MissingJavadocMethod">MissingJavadocMethod</a>
+<ul>
+<li>scope: <code>&quot;public&quot;</code></li>
+<li>tokens: <code>&quot;METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF,                                    COMPACT_CTOR_DEF&quot;</code></li>
+<li>minLineCount: <code>&quot;2&quot;</code></li>
+<li>allowedAnnotations: <code>&quot;Override, Test&quot;</code></li></ul></td>
+<td>4</td>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
+<tr class="a">
+<td align="left"></td>
 <td><a class="externalLink" href="https://checkstyle.org/config_javadoc.html#MissingJavadocType">MissingJavadocType</a>
 <ul>
 <li>scope: <code>&quot;protected&quot;</code></li>
 <li>excludeScope: <code>&quot;nothing&quot;</code></li>
 <li>tokens: <code>&quot;CLASS_DEF, INTERFACE_DEF, ENUM_DEF,                       RECORD_DEF, ANNOTATION_DEF&quot;</code></li></ul></td>
-<td>4</td>
+<td>8</td>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
+<tr class="b">
+<td align="left">whitespace</td>
+<td><a class="externalLink" href="https://checkstyle.org/config_whitespace.html#OperatorWrap">OperatorWrap</a>
+<ul>
+<li>tokens: <code>&quot;BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR,                     LT, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR, METHOD_REF,                     TYPE_EXTENSION_AND &quot;</code></li>
+<li>option: <code>&quot;NL&quot;</code></li></ul></td>
+<td>2</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr></table></section><section>
 <h3><a name="Details"></a>Details</h3><a name="Details"></a><section>
 <h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2FPigLatinRestApplication.java"></a>lv/id/jc/piglatin/PigLatinRestApplication.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2FPigLatinRestApplication.java"></a>
@@ -161,25 +204,61 @@
 <td>javadoc</td>
 <td>MissingJavadocType</td>
 <td>Missing a Javadoc comment.</td>
-<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L6">6</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L9">9</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L9">9</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L12">12</a></td></tr>
 <tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L10">10</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L13">13</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L11">11</a></td></tr></table></section><section>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L14">14</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L16">16</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L18">18</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L19">19</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L21">21</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L23">23</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/PigLatinRestApplication.html#L24">24</a></td></tr></table></section><section>
 <h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcontroller.2FPigLatinController.java"></a>lv/id/jc/piglatin/controller/PigLatinController.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcontroller.2FPigLatinController.java"></a>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -260,38 +339,348 @@
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
-<td>Extra separation in import group before 'java.util.function.UnaryOperator'</td>
-<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L5">5</a></td></tr>
+<td>Extra separation in import group before 'org.springframework.beans.factory.annotation.Qualifier'</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L7">7</a></td></tr>
 <tr class="a">
-<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>imports</td>
-<td>CustomImportOrder</td>
-<td>Wrong lexicographical order for 'java.util.function.UnaryOperator' import. Should be before 'org.springframework.stereotype.Component'.</td>
-<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L5">5</a></td></tr>
-<tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>MissingJavadocType</td>
 <td>Missing a Javadoc comment.</td>
-<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L7">7</a></td></tr>
-<tr class="a">
-<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L9">9</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L10">10</a></td></tr>
 <tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
-<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td>'member def modifier' has incorrect indentation level 4, expected level should be 2.</td>
 <td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L12">12</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
+<td>'member def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L13">13</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'ctor def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L15">15</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocMethod</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L15">15</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'ctor def rparen' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L18">18</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'ctor def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L19">19</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'ctor def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L20">20</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'ctor def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L22">22</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L24">24</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L26">26</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
 <td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L13">13</a></td></tr></table></section><section>
+<td><a href="./xref/lv/id/jc/piglatin/core/PigLatinTranslator.html#L27">27</a></td></tr></table></section><section>
+<h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FTranslator.java"></a>lv/id/jc/piglatin/core/Translator.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FTranslator.java"></a>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocType</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/Translator.html#L5">5</a></td></tr></table></section><section>
+<h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordTranslator.java"></a>lv/id/jc/piglatin/core/WordTranslator.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordTranslator.java"></a>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Extra separation in import group before 'org.springframework.stereotype.Component'</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L5">5</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocType</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L7">7</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'member def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L9">9</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>whitespace</td>
+<td>OperatorWrap</td>
+<td>'+' should be on a new line.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L10">10</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>whitespace</td>
+<td>OperatorWrap</td>
+<td>'+' should be on a new line.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L11">11</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'member def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L14">14</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L16">16</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L18">18</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordTranslator.html#L19">19</a></td></tr></table></section><section>
+<h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordValidation.java"></a>lv/id/jc/piglatin/core/WordValidation.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordValidation.java"></a>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Extra separation in import group before 'java.lang.annotation.Documented'</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L9">9</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Import statement for 'java.lang.annotation.ElementType.FIELD' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L13">13</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Import statement for 'java.lang.annotation.ElementType.METHOD' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L14">14</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Import statement for 'java.lang.annotation.ElementType.PARAMETER' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L15">15</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Import statement for 'java.lang.annotation.RetentionPolicy.RUNTIME' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L16">16</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocType</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L18">18</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'annotation field def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L26">26</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocMethod</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L26">26</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'annotation field def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L28">28</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocMethod</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L28">28</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'annotation field def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L30">30</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocMethod</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordValidation.html#L30">30</a></td></tr></table></section><section>
+<h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordsMatcher.java"></a>lv/id/jc/piglatin/core/WordsMatcher.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fcore.2FWordsMatcher.java"></a>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Extra separation in import group before 'org.springframework.stereotype.Component'</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordsMatcher.html#L7">7</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'member def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordsMatcher.html#L14">14</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordsMatcher.html#L24">24</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordsMatcher.html#L26">26</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/core/WordsMatcher.html#L27">27</a></td></tr></table></section><section>
+<h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fdomain.2FWord.java"></a>lv/id/jc/piglatin/domain/Word.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fdomain.2FWord.java"></a>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Extra separation in import group before 'org.springframework.validation.annotation.Validated'</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L5">5</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Extra separation in import group before 'jakarta.validation.constraints.NotBlank'</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L7">7</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Wrong lexicographical order for 'jakarta.validation.constraints.NotBlank' import. Should be before 'org.springframework.validation.annotation.Validated'.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L7">7</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>imports</td>
+<td>CustomImportOrder</td>
+<td>Wrong lexicographical order for 'jakarta.validation.constraints.Pattern' import. Should be before 'org.springframework.validation.annotation.Validated'.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L8">8</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>MissingJavadocType</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L10">10</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L13">13</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L14">14</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L15">15</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L17">17</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L19">19</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/domain/Word.html#L20">20</a></td></tr></table></section><section>
 <h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fservice.2FPigLatinService.java"></a>lv/id/jc/piglatin/service/PigLatinService.java</h4><a name="lv.2Fid.2Fjc.2Fpiglatin.2Fservice.2FPigLatinService.java"></a>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -304,68 +693,68 @@
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
-<td>Extra separation in import group before 'org.springframework.stereotype.Service'</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L5">5</a></td></tr>
+<td>Extra separation in import group before 'org.springframework.beans.factory.annotation.Qualifier'</td>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L6">6</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
-<td>Extra separation in import group before 'java.util.function.UnaryOperator'</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L7">7</a></td></tr>
+<td>Extra separation in import group before 'lv.id.jc.piglatin.core.Translator'</td>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L9">9</a></td></tr>
 <tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>imports</td>
 <td>CustomImportOrder</td>
-<td>Wrong lexicographical order for 'java.util.function.UnaryOperator' import. Should be before 'org.springframework.stereotype.Service'.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L7">7</a></td></tr>
+<td>Wrong lexicographical order for 'lv.id.jc.piglatin.core.Translator' import. Should be before 'org.springframework.stereotype.Service'.</td>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L9">9</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>MissingJavadocType</td>
 <td>Missing a Javadoc comment.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L9">9</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L11">11</a></td></tr>
 <tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'member def modifier' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L11">11</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L13">13</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'ctor def modifier' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L13">13</a></td></tr>
-<tr class="b">
-<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'ctor def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L14">14</a></td></tr>
-<tr class="a">
-<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'ctor def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
 <td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L15">15</a></td></tr>
 <tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
-<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td>'ctor def' child has incorrect indentation level 8, expected level should be 4.</td>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L16">16</a></td></tr>
+<tr class="a">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'ctor def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
 <td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L17">17</a></td></tr>
+<tr class="b">
+<td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>indentation</td>
+<td>Indentation</td>
+<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L19">19</a></td></tr>
 <tr class="a">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L18">18</a></td></tr>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L20">20</a></td></tr>
 <tr class="b">
 <td align="left"><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>indentation</td>
 <td>Indentation</td>
 <td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L19">19</a></td></tr></table></section></section></section>
+<td><a href="./xref/lv/id/jc/piglatin/service/PigLatinService.html#L21">21</a></td></tr></table></section></section></section>
       </div>
     </div>
     <div class="clear">

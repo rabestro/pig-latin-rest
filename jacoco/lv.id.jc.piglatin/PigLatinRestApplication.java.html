@@ -2,12 +2,25 @@
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
 @SpringBootApplication
-<span class="nc" id="L7">public class PigLatinRestApplication {</span>
+<span class="fc" id="L10">public class PigLatinRestApplication {</span>
 
     public static void main(String[] args) {
-<span class="nc" id="L10">        SpringApplication.run(PigLatinRestApplication.class, args);</span>
-<span class="nc" id="L11">    }</span>
+<span class="nc" id="L13">        SpringApplication.run(PigLatinRestApplication.class, args);</span>
+<span class="nc" id="L14">    }</span>
+
+    @Bean
+    public LocalValidatorFactoryBean validator() {
+<span class="fc" id="L18">        return new LocalValidatorFactoryBean();</span>
+    }
+
+    @Bean
+    public MethodValidationPostProcessor validationPostProcessor() {
+<span class="fc" id="L23">        return new MethodValidationPostProcessor();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

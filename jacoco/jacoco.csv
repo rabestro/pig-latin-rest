@@ -1,9 +1,12 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 PigLatin REST,lv.id.jc.piglatin.model,TranslationResponse,89,0,8,0,25,0,13,0,9,0
 PigLatin REST,lv.id.jc.piglatin.model,TranslationRequest,89,0,8,0,25,0,13,0,9,0
-PigLatin REST,lv.id.jc.piglatin.core,PigLatinTranslator,0,8,0,0,0,2,0,2,0,2
-PigLatin REST,lv.id.jc.piglatin.controller,PigLatinController,23,0,0,0,6,0,2,0,2,0
-PigLatin REST,lv.id.jc.piglatin.service,PigLatinService,12,0,0,0,4,0,2,0,2,0
+PigLatin REST,lv.id.jc.piglatin.core,WordTranslator,0,13,0,0,0,3,0,3,0,3
+PigLatin REST,lv.id.jc.piglatin.core,WordsMatcher,0,12,0,0,0,4,0,3,0,3
+PigLatin REST,lv.id.jc.piglatin.core,PigLatinTranslator,0,20,0,0,0,6,0,2,0,2
+PigLatin REST,lv.id.jc.piglatin.controller,PigLatinController,17,6,0,0,3,3,1,1,1,1
+PigLatin REST,lv.id.jc.piglatin.service,PigLatinService,8,6,0,0,1,3,1,1,1,1
 PigLatin REST,lv.id.jc.piglatin.api,ApiUtil,27,0,0,0,9,0,2,0,2,0
 PigLatin REST,lv.id.jc.piglatin.api,PigLatinApi,38,0,4,0,10,0,5,0,3,0
-PigLatin REST,lv.id.jc.piglatin,PigLatinRestApplication,8,0,0,0,3,0,2,0,2,0
+PigLatin REST,lv.id.jc.piglatin,PigLatinRestApplication,5,11,0,0,2,3,1,3,1,3
+PigLatin REST,lv.id.jc.piglatin.domain,Word,6,11,0,0,1,2,1,2,1,2
