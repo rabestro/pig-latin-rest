@@ -6,10 +6,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WordTranslator implements Translator {
-    private static final Pattern RULES = Pattern.compile(
-        "((?<vowel>[aeiou]|xr|yt)|" +
-        "(?<consonant>(?!xr|yt)y?(?:[^aeiouy]*qu|[^aeiouy]*)))" +
-        "(?<body>.*)"
+    private static final Pattern RULES = Pattern.compile("""
+        (?:
+            (?<vowel>[aeiou]|xr|yt)
+            |
+            (?<consonant>y?(?:[^aeiouy]*qu|[^aeiouy]*))
+        )
+        (?<body>.*)
+        """, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS
     );
     private static final String TEMPLATE = "${vowel}${body}${consonant}ay";
 

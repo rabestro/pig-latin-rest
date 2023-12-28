@@ -366,10 +366,8 @@
                             <!-- target to generate java server code -->
                             <generatorName>spring</generatorName>
                             <!-- pass any necessary config options -->
-                            <!-- <output>${project.basedir}/src/gen/java/main</output>-->
                             <configOptions>
                                 <useSpringBoot3>true</useSpringBoot3>
-                                <!--                                <apiFirst>true</apiFirst>-->
                                 <documentationProvider>springdoc</documentationProvider>
                                 <basePackage>lv.id.jc.piglatin</basePackage>
                                 <apiPackage>lv.id.jc.piglatin.api</apiPackage>
