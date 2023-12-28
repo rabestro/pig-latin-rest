@@ -1,6 +1,6 @@
 package lv.id.jc.piglatin.core
 
-import lv.id.jc.piglatin.domain.Word
+
 import spock.lang.Narrative
 import spock.lang.Specification
 import spock.lang.Subject
@@ -18,7 +18,7 @@ class WordTranslatorSpec extends Specification {
 
     def "test apply method with word #word - #description"() {
         expect:
-        wordTranslator.apply(word as Word) == expectedWord as Word
+        wordTranslator.apply(word) == expectedWord
 
         where:
         word      | expectedWord | description
