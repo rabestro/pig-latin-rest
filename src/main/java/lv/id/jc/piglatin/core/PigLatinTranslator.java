@@ -1,14 +1,28 @@
 package lv.id.jc.piglatin.core;
 
+import java.util.function.Function;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.util.function.UnaryOperator;
-
 @Component
-public class PigLatinTranslator implements UnaryOperator<String> {
+public class PigLatinTranslator implements Translator {
+    private final Function<String, Matcher> wordMatcher;
+    private final Function<MatchResult, String> translator;
+
+    public PigLatinTranslator(
+        Function<String, Matcher> wordMatcher,
+        @Qualifier("wordTranslator") Translator wordTranslator
+    ) {
+        this.wordMatcher = wordMatcher;
+        this.translator = ((Function<MatchResult, String>) MatchResult::group)
+            .andThen(wordTranslator);
+    }
+
     @Override
-    public String apply(String englishWord) {
-        // TODO: translation logic goes here
-        throw new UnsupportedOperationException("Not implemented yet");
+    public String apply(String phrase) {
+        return wordMatcher.apply(phrase).replaceAll(translator);
     }
 }
