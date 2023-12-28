@@ -1,6 +1,5 @@
 package lv.id.jc.piglatin.core;
 
-import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Component;

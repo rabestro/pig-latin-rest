@@ -1,7 +1,6 @@
 package lv.id.jc.piglatin.core;
 
 import java.util.function.Function;
-import java.util.function.UnaryOperator;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 
