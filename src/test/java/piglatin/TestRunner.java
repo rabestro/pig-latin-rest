@@ -8,5 +8,4 @@ class TestRunner {
     Karate testPigLatin() {
         return Karate.run("pig-latin-translator").relativeTo(getClass());
     }
-
 }
