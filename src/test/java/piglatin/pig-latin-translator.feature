@@ -2,7 +2,8 @@ Feature: Pig Latin API
     This API translates English to Pig Latin
 
     Background:
-        * url 'http://localhost:8080/pig-latin'
+        * url baseUrl
+        * path '/pig-latin'
 
     Scenario: Hello World!
         Given request {text: "Hello World!"}
