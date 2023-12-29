@@ -81,7 +81,7 @@
     </distributionManagement>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
         <groovy.version>4.0.17</groovy.version>
 
         <swagger-api.version>2.2.19</swagger-api.version>
