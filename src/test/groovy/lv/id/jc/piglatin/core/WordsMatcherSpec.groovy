@@ -1,10 +1,6 @@
 package lv.id.jc.piglatin.core
 
-import spock.lang.Narrative
-import spock.lang.Specification
-import spock.lang.Subject
-import spock.lang.Title
-import spock.lang.Unroll
+import spock.lang.*
 
 @Title('Words Matcher')
 @Narrative('''
@@ -30,8 +26,11 @@ class WordsMatcherSpec extends Specification {
         ''              | []                 | 'Zero - Empty string'
         'a'             | ['a']              | 'One - Single character word'
         'hello world'   | ['hello', 'world'] | 'Phrase with multiple words'
-        '123'           | ['123']            | 'Phrase with numbers'
+        '123'           | []                 | 'Phrase with numbers'
         '!@#$'          | []                 | 'Phrase with special characters'
         'Hello, World!' | ['Hello', 'World'] | 'Phrase with punctuation'
+        "Don't"         | ["Don't"]          | 'Phrase with apostrophe'
+        "I'm"           | ["I'm"]            | 'Phrase with contraction'
+        "'red'"         | ["red"]            | 'Phrase with single quotes'
     }
 }

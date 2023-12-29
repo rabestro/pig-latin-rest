@@ -6,13 +6,11 @@ import java.util.function.UnaryOperator;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import lv.id.jc.piglatin.core.Translator;
-
 @Service
-public class PigLatinService {
+public class TranslationService {
     private final UnaryOperator<String> translator;
 
-    public PigLatinService(@Qualifier("pigLatinTranslator") Translator translator) {
+    public TranslationService(@Qualifier("phraseTranslator") UnaryOperator<String> translator) {
         this.translator = translator;
     }
 
