@@ -7,8 +7,9 @@ import org.springframework.http.ResponseEntity
 import lv.id.jc.piglatin.model.TranslationRequest
 import lv.id.jc.piglatin.model.TranslationResponse
 import lv.id.jc.piglatin.service.TranslationService
+import spock.lang.Title
 
-class PigLatinControllerAiSpec extends Specification {
+class PigLatinControllerSpec extends Specification {
 
     TranslationService translationService = Mock()
     @Subject
