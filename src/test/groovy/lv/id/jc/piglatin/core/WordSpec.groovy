@@ -12,6 +12,7 @@ As a user
 I want to validate words
 So that I can translate them to Pig Latin
 ''')
+@Subject(Word)
 class WordSpec extends Specification {
     def validator = Validation.buildDefaultValidatorFactory().getValidator()
 
@@ -57,7 +58,6 @@ class WordSpec extends Specification {
     }
 
     static class TestBean {
-        @Subject
         @Word
         String value
 
