@@ -4,7 +4,7 @@
 import lv.id.jc.piglatin.api.PigLatinApi;
 import lv.id.jc.piglatin.model.TranslationRequest;
 import lv.id.jc.piglatin.model.TranslationResponse;
-import lv.id.jc.piglatin.service.PigLatinService;
+import lv.id.jc.piglatin.service.TranslationService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PigLatinController implements PigLatinApi {
 
-    private final PigLatinService pigLatinService;
+    private final TranslationService translationService;
 
-<span class="fc" id="L17">    public PigLatinController(PigLatinService pigLatinService) {</span>
-<span class="fc" id="L18">        this.pigLatinService = pigLatinService;</span>
+<span class="fc" id="L17">    public PigLatinController(TranslationService translationService) {</span>
+<span class="fc" id="L18">        this.translationService = translationService;</span>
 <span class="fc" id="L19">    }</span>
 
     @Override
     public ResponseEntity&lt;TranslationResponse&gt; translate(TranslationRequest translationRequest) {
-<span class="nc" id="L23">        var textEnglish = translationRequest.getText();</span>
-<span class="nc" id="L24">        var textPigLatin = pigLatinService.translate(textEnglish);</span>
-<span class="nc" id="L25">        return new ResponseEntity&lt;&gt;(new TranslationResponse(textPigLatin), HttpStatus.OK);</span>
+<span class="fc" id="L23">        var textEnglish = translationRequest.getText();</span>
+<span class="fc" id="L24">        var textPigLatin = translationService.translate(textEnglish);</span>
+<span class="fc" id="L25">        return new ResponseEntity&lt;&gt;(new TranslationResponse(textPigLatin), HttpStatus.OK);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

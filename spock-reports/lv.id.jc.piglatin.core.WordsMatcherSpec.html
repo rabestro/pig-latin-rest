@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Thu Dec 28 23:53:17 EET 2023 by jegors</div>
+<div class='date-test-ran'>Created on Fri Dec 29 17:58:46 EET 2023 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>6</td>
-<td>6</td>
+<td>9</td>
+<td>9</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.012 seconds</td>
+<td>0.014 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -315,6 +315,15 @@ So that I can translate them to Pig Latin</pre>
 </li>
 <li>
 <a href='#-99478578' class='feature-toc-pass'>match words in a sentence [5]</a>
+</li>
+<li>
+<a href='#-99478547' class='feature-toc-pass'>match words in a sentence [6]</a>
+</li>
+<li>
+<a href='#-99478516' class='feature-toc-pass'>match words in a sentence [7]</a>
+</li>
+<li>
+<a href='#-99478485' class='feature-toc-pass'>match words in a sentence [8]</a>
 </li>
 </ul>
 <tr>
@@ -387,7 +396,7 @@ So that I can translate them to Pig Latin</pre>
 <span>match words in a sentence [1]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.001 seconds)</div>
+<div class='ex-time'>(0)</div>
 </span>
 </div>
 </td>
@@ -437,7 +446,7 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>One - Single character word</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.001 seconds)</span>
+<span class='ex-time'>(0)</span>
 </td>
 </tr>
 </tbody>
@@ -561,7 +570,7 @@ So that I can translate them to Pig Latin</pre>
 <tbody>
 <tr class='ex-pass'>
 <td class='ex-value'>123</td>
-<td class='ex-value'>[123]</td>
+<td class='ex-value'>[]</td>
 <td class='ex-value'>Phrase with numbers</td>
 <td class='ex-result'>
 <span>OK</span>
@@ -691,6 +700,198 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>Hello, World!</td>
 <td class='ex-value'>[Hello, World]</td>
 <td class='ex-value'>Phrase with punctuation</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-99478547'>
+<span>match words in a sentence [6]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>@Subject def wordMatcher = new WordsMatcher()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def results = wordMatcher.apply(sentence).results()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>results.collect { it.group() } == words</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>sentence</th>
+<th class='ex-header'>words</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>Don't</td>
+<td class='ex-value'>[Don't]</td>
+<td class='ex-value'>Phrase with apostrophe</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-99478516'>
+<span>match words in a sentence [7]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>@Subject def wordMatcher = new WordsMatcher()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def results = wordMatcher.apply(sentence).results()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>results.collect { it.group() } == words</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>sentence</th>
+<th class='ex-header'>words</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>I'm</td>
+<td class='ex-value'>[I'm]</td>
+<td class='ex-value'>Phrase with contraction</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-99478485'>
+<span>match words in a sentence [8]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>@Subject def wordMatcher = new WordsMatcher()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def results = wordMatcher.apply(sentence).results()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>results.collect { it.group() } == words</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>sentence</th>
+<th class='ex-header'>words</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>'red'</td>
+<td class='ex-value'>[red]</td>
+<td class='ex-value'>Phrase with single quotes</td>
 <td class='ex-result'>
 <span>OK</span>
 <span class='ex-time'>(0)</span>

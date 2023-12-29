@@ -12,18 +12,29 @@ import org.springframework.stereotype.Component;
 @Component
 <span class="fc" id="L13">public class WordsMatcher implements Function&lt;String, Matcher&gt; {</span>
 <span class="fc" id="L14">    private static final Pattern WORD = Pattern</span>
-<span class="fc" id="L15">        .compile(&quot;\\w+&quot;, Pattern.CASE_INSENSITIVE);</span>
+<span class="fc" id="L15">        .compile(&quot;&quot;&quot;</span>
+            # A word contains only Unicode letters and apostrophe (') in the middle
+            (               # Start of the group
+                \\p{L}      # Any Unicode letter
+            |               # OR
+                (?&lt;=\\p{L}) # Positive lookbehind for a Unicode letter
+                '           # An apostrophe
+                (?=\\p{L})  # Positive lookahead for a Unicode letter
+                (?!.*')     # Negative lookahead for another apostrophe
+            )+              # One or more of the previous group
+            &quot;&quot;&quot;,
+            Pattern.COMMENTS + Pattern.CASE_INSENSITIVE);
 
     /**
      * This method applies the word-matching pattern to a given phrase.
-     * It returns a Matcher object that can be used to find matches in the phrase.
+     * It returns a Matcher object that can be used to find words in the phrase.
      *
      * @param phrase the phrase to apply the word-matching pattern to
-     * @return a Matcher object for finding matches in the phrase
+     * @return a Matcher object for finding words in the phrase
      */
     @Override
     public Matcher apply(String phrase) {
-<span class="fc" id="L26">        return WORD.matcher(phrase);</span>
+<span class="fc" id="L37">        return WORD.matcher(phrase);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
