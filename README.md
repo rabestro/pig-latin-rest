@@ -1,4 +1,4 @@
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=lv.id.jc%3Apig-latin-rest&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=lv.id.jc%3Apig-latin-rest)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lv.id.jc%3Apig-latin-rest&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=lv.id.jc%3Apig-latin-rest)
 
 # Pig Latin
 
