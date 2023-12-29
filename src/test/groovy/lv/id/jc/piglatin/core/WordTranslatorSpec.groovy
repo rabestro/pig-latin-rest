@@ -6,7 +6,7 @@ import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Title
 
-@Title('WordValidation Translator')
+@Title('Word Translator')
 @Narrative('''
 As a user
 I want to translate words to Pig Latin
@@ -23,16 +23,16 @@ class WordTranslatorSpec extends Specification {
         where:
         word      | expectedWord | description
         'a'       | 'aay'        | 'One - Single character word'
-        'apple'   | 'appleay'    | 'WordValidation beginning with A'
-        'ear'     | 'earay'      | 'WordValidation beginning with E'
-        'igloo'   | 'iglooay'    | 'WordValidation beginning with I'
-        'object'  | 'objectay'   | 'WordValidation beginning with O'
-        'under'   | 'underay'    | 'WordValidation beginning with U'
-        'equal'   | 'equalay'    | 'WordValidation beginning with vowel and followed by qu'
-        'pig'     | 'igpay'      | 'WordValidation beginning with P'
-        'koala'   | 'oalakay'    | 'WordValidation beginning with K'
-        'xenon'   | 'enonxay'    | 'WordValidation beginning with X'
-        'qat'     | 'atqay'      | 'WordValidation beginning with Q without a following U'
+        'apple'   | 'appleay'    | 'Word beginning with A'
+        'ear'     | 'earay'      | 'Word beginning with E'
+        'igloo'   | 'iglooay'    | 'Word beginning with I'
+        'object'  | 'objectay'   | 'Word beginning with O'
+        'under'   | 'underay'    | 'Word beginning with U'
+        'equal'   | 'equalay'    | 'Word beginning with vowel and followed by qu'
+        'pig'     | 'igpay'      | 'Word beginning with P'
+        'koala'   | 'oalakay'    | 'Word beginning with K'
+        'xenon'   | 'enonxay'    | 'Word beginning with X'
+        'qat'     | 'atqay'      | 'Word beginning with Q without a following U'
         'chair'   | 'airchay'    | 'Ch treated like a consonant at the beginning of a word'
         'queen'   | 'eenquay'    | 'Qu treated like a consonant at the beginning of a word'
         'square'  | 'aresquay'   | 'Qu and a preceding consonant treated like a consonant at the beginning of a word'

@@ -1,11 +1,12 @@
 package lv.id.jc.piglatin.core;
 
+import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class WordTranslator implements Translator {
+@Component("wordTranslator")
+public class WordTranslator implements UnaryOperator<String> {
     private static final Pattern RULES = Pattern.compile("""
         (?:
             (?<vowel>[aeiou]|xr|yt)
@@ -18,7 +19,7 @@ public class WordTranslator implements Translator {
     private static final String TEMPLATE = "${vowel}${body}${consonant}ay";
 
     @Override
-    public String apply(String word) {
+    public String apply(@Word String word) {
         return RULES.matcher(word).replaceFirst(TEMPLATE);
     }
 }
