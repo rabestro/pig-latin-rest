@@ -12,7 +12,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class WordsMatcher implements Function<String, Matcher> {
     private static final Pattern WORD = Pattern
-        .compile("(\\p{L}|(?<=\\p{L})'(?=\\p{L}))+", Pattern.CASE_INSENSITIVE);
+        .compile("""
+            # A word contains only Unicode letters and apostrophe (') in the middle
+            (               # Start of the group
+                \\p{L}      # Any Unicode letter
+            |               # OR
+                (?<=\\p{L}) # Positive lookbehind for a Unicode letter
+                '           # An apostrophe
+                (?=\\p{L})  # Positive lookahead for a Unicode letter
+                (?!.*')     # Negative lookahead for another apostrophe
+            )+              # One or more of the previous group
+            """,
+            Pattern.COMMENTS + Pattern.CASE_INSENSITIVE);
 
     /**
      * This method applies the word-matching pattern to a given phrase.
