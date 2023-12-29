@@ -10,8 +10,7 @@ So that I can translate them to Pig Latin
 ''')
 class WordsMatcherSpec extends Specification {
 
-    @Unroll('#description')
-    def 'match words in a sentence'() {
+    def 'match words in #description'() {
         given:
         @Subject def wordMatcher = new WordsMatcher()
 
@@ -22,15 +21,17 @@ class WordsMatcherSpec extends Specification {
         results.collect { it.group() } == words
 
         where:
-        sentence        | words              | description
-        ''              | []                 | 'Zero - Empty string'
-        'a'             | ['a']              | 'One - Single character word'
-        'hello world'   | ['hello', 'world'] | 'Phrase with multiple words'
-        '123'           | []                 | 'Phrase with numbers'
-        '!@#$'          | []                 | 'Phrase with special characters'
-        'Hello, World!' | ['Hello', 'World'] | 'Phrase with punctuation'
-        "Don't"         | ["Don't"]          | 'Phrase with apostrophe'
-        "I'm"           | ["I'm"]            | 'Phrase with contraction'
-        "'red'"         | ["red"]            | 'Phrase with single quotes'
+        sentence                    | words                            | description
+        ''                          | []                               | 'Empty string'
+        'a'                         | ['a']                            | 'Single character word'
+        'hello world'               | ['hello', 'world']               | 'Phrase with multiple words'
+        '123'                       | []                               | 'Phrase with numbers'
+        '!@#$'                      | []                               | 'Phrase with special characters'
+        'Hello, World!'             | ['Hello', 'World']               | 'Phrase with punctuation'
+        "Don't"                     | ["Don't"]                        | 'Phrase with apostrophe'
+        "I'm"                       | ["I'm"]                          | 'Phrase with contraction'
+        "'red'"                     | ["red"]                          | 'Phrase with single quotes'
+        '"red"'                     | ["red"]                          | 'Phrase with double quotes'
+        'Hello, World! I\'m "red".' | ['Hello', 'World', "I'm", 'red'] | 'Complex phrase'
     }
 }

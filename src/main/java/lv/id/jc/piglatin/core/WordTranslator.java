@@ -5,6 +5,9 @@ import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * This class is responsible for translating words to Pig Latin.
+ */
 @Component("wordTranslator")
 public class WordTranslator implements UnaryOperator<String> {
     private static final Pattern RULES = Pattern.compile("""
@@ -18,6 +21,12 @@ public class WordTranslator implements UnaryOperator<String> {
     );
     private static final String TEMPLATE = "${vowel}${body}${consonant}ay";
 
+    /**
+     * Translates a word to Pig Latin.
+     *
+     * @param word the word to translate
+     * @return the translated word
+     */
     @Override
     public String apply(@Word String word) {
         return RULES.matcher(word).replaceFirst(TEMPLATE);

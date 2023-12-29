@@ -2,6 +2,7 @@ package lv.id.jc.piglatin.core
 
 import jakarta.validation.Validation
 import spock.lang.Narrative
+import spock.lang.Rollup
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Title
@@ -17,16 +18,17 @@ class WordSpec extends Specification {
     def validator = Validation.buildDefaultValidatorFactory().getValidator()
 
     def "has violations for '#input' (#description)"() {
-        given:
+
+        given: 'we create a bean with an invalid word'
         var bean = new TestBean(input)
 
-        when:
+        when: 'we validate the bean'
         var violations = validator.validate(bean)
 
-        then:
+        then: 'there is one violation'
         violations
 
-        where:
+        where: 'we test different invalid words'
         input       | description
         ''          | 'Empty string'
         ' '         | 'Whitespace'
@@ -43,17 +45,18 @@ class WordSpec extends Specification {
         "ap'pl'e"   | 'Word with two apostrophes'
     }
 
-    def "no violations for #word"() {
-        given:
+    def 'no violations for #word'() {
+
+        given: 'we create a bean with a valid word'
         var bean = new TestBean(word)
 
-        when:
+        when: 'we validate the bean'
         var violations = validator.validate(bean)
 
-        then:
+        then: 'there are no violations'
         violations.isEmpty()
 
-        where:
+        where: 'we test different valid words'
         word << ['apple', "can't", 'äpple', 'ApPlE', 'a']
     }
 

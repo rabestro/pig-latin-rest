@@ -87,6 +87,7 @@
         <swagger-api.version>2.2.19</swagger-api.version>
         <swagger-ui.version>5.10.3</swagger-ui.version>
         <springdoc.version>2.3.0</springdoc.version>
+        <karate.version>1.4.1</karate.version>
 
         <sonar.language>java,groovy,xml</sonar.language>
         <sonar.java.source>${java.version}</sonar.java.source>
@@ -131,6 +132,14 @@
                 <groupId>org.openapitools</groupId>
                 <artifactId>jackson-databind-nullable</artifactId>
                 <version>0.2.6</version>
+            </dependency>
+
+            <!-- Karate API Testing Framework-->
+            <dependency>
+                <groupId>com.intuit.karate</groupId>
+                <artifactId>karate-junit5</artifactId>
+                <version>${karate.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <!-- Spock Framework (Bill of Materials) -->
@@ -204,6 +213,10 @@
         </dependency>
 
         <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit5</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
             <scope>test</scope>
@@ -220,6 +233,14 @@
     </dependencies>
 
     <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
         <pluginManagement>
             <plugins>
                 <!-- Testing related plugins -->
@@ -241,6 +262,7 @@
                             <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
                             <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
                         </statelessTestsetReporter>
+                        <argLine>-Dfile.encoding=UTF-8</argLine>
                     </configuration>
                 </plugin>
                 <plugin>
