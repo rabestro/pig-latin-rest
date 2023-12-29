@@ -16,6 +16,8 @@ info:
 servers:
   - url: 'http://localhost:8080'
     description: Local server
+  - url: 'https://piglatin.azurewebsites.net'
+    description: Azure server
 externalDocs:
     description: Pig Latin exercise on Exercism
     url: 'https://exercism.org/tracks/java/exercises/pig-latin'
