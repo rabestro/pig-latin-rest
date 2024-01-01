@@ -1,0 +1,29 @@
+meta {
+  name: Translate text to Pig Latin
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "text": "Hello, World!"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body: isJson
+  res.body.text: eq "ellohay, orldway!"
+  res.body.text: isDefined 
+  res.body.text: isString 
+}
+
+docs {
+  Translate English sentence to Pig Latin
+}
