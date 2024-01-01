@@ -7,5 +7,11 @@ Content-Type: application/json
     "text": "Hello, World!"
 }
 
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+
 ### Swagger UI
 GET https://piglatin.azurewebsites.net/swagger-ui/index.html
