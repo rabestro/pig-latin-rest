@@ -4,13 +4,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_bruno_api_test:
+  run_karate_api_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: API tests
+      - name: Karate API tests
         uses: erikbos/karate-action@main
         with:
           url: https://piglatin.azurewebsites.net
           tests: |
             src/test/java/piglatin/pig-latin-translator.feature
+      - name: Publish Test Report
+        uses: actions/upload-artifact@v2
+        if: always() # This ensures the report is published even if tests fail
+        with:
+          name: karate-test-reports
+          path: target/karate-reports
