@@ -8,9 +8,9 @@ function fn() {
         env: env,
     }
     if (env === 'dev') {
-        config.url = 'http://localhost:8080';
+        config.baseUrl = 'http://localhost:8080';
     } else if (env === 'azure') {
-        config.url = 'https://piglatin.azurewebsites.net';
+        config.baseUrl = 'https://piglatin.azurewebsites.net';
     }
     return config;
 }
