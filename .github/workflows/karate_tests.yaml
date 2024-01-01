@@ -1,0 +1,16 @@
+name: Karate API Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run_bruno_api_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: API tests
+        uses: erikbos/karate-action@main
+        with:
+          url: https://piglatin.azurewebsites.net
+          tests: |
+            src/test/java/piglatin/pig-latin-translator.feature

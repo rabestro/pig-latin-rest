@@ -4,7 +4,7 @@
     "description": "API tests for Pig Latin Translator",
     "main": "index.js",
     "scripts": {
-        "test": "bru run --env azure --format junit --output ../target/results.xml"
+        "test": "bru run --env azure --format junit --output results.xml"
     },
     "author": "Jegors Čemisovs. <jegors_cemisovs@epam.com>",
     "license": "MIT",
