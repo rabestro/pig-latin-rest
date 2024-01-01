@@ -14,16 +14,10 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
-      - name: Get java version from pom.xml
-        id: java-version
-        uses: mavrosxristoforos/get-xml-info@1.1.1
-        with:
-          xml-file: pom.xml
-          xpath: ${{ env.XPATH }}
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: ${{ steps.java-version.outputs.info }}
+          java-version: 17
           distribution: 'zulu' # Alternative distribution options are available.
       - name: Build
         run: mvn --batch-mode -DskipTests package
