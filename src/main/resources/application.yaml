@@ -6,4 +6,4 @@ server:
 
 springdoc:
   swagger-ui:
-    url: /piglatin-api.yaml
+    url: /openapi.yaml

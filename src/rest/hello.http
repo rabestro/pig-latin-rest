@@ -4,5 +4,8 @@ POST {{host}}/pig-latin
 Content-Type: application/json
 
 {
-    "text": "Hello World"
+    "text": "Hello, World!"
 }
+
+### Swagger UI
+GET https://piglatin.azurewebsites.net/swagger-ui/index.html

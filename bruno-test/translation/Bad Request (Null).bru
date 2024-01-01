@@ -1,0 +1,26 @@
+meta {
+  name: Bad Request (Null)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: json
+  auth: none
+}
+
+body:json {
+  null
+}
+
+assert {
+  res.status: eq 400
+  res.body: isJson
+  res.body.error: isDefined
+  res.body.error: contains Bad Request
+  res.body.timestamp: isDefined
+  res.body.timestamp: matches \d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}
+  res.body.status: isNumber
+  res.body.path: isDefined 
+}

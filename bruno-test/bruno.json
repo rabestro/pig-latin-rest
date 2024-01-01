@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Pig Latin translator",
+  "type": "collection",
+  "presets": {
+    "requestType": "http",
+    "requestUrl": ""
+  }
+}
