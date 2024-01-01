@@ -2,7 +2,7 @@ Feature: Pig Latin API
     This API translates English to Pig Latin
 
     Background:
-        * url url
+        * url 'https://piglatin.azurewebsites.net'
         * path '/pig-latin'
 
     Scenario: Hello World!
