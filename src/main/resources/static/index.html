@@ -2,36 +2,42 @@
 <html lang="en">
 <head>
     <title>Pig Latin Translator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-<h1>Pig Latin Translator</h1>
-<form id="translateForm">
-    <label for="inputText">Enter text:</label><br>
-    <input type="text" id="inputText" name="inputText"><br>
-    <input type="submit" value="Translate">
-</form>
-<p id="outputText"></p>
+
+<div class="container">
+    <h1 class="text-center my-4">Pig Latin Translator</h1>
+    <form id="translateForm">
+        <div class="form-group">
+            <input type="text" id="inputText" name="inputText" class="form-control" placeholder="Enter text to translate">
+        </div>
+        <button type="submit" class="btn btn-primary">Translate</button>
+    </form>
+    <div id="outputText" class="mt-4"></div>
+</div>
 
 <script>
-    $(document).ready(function () {
-        $("#translateForm").submit(function (event) {
+    $(document).ready(function(){
+        $("#translateForm").submit(function(event){
             event.preventDefault();
             var inputText = $("#inputText").val();
             $.ajax({
                 url: '/pig-latin',
                 type: 'post',
                 contentType: 'application/json',
-                data: JSON.stringify({"text": inputText}),
-                success: function (data) {
+                data: JSON.stringify({ "text": inputText }),
+                success: function(data) {
                     $("#outputText").text(data.text);
                 },
-                error: function () {
+                error: function() {
                     $("#outputText").text("An error occurred.");
                 }
             });
         });
     });
 </script>
+
 </body>
 </html>
