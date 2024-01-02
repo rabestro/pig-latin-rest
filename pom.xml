@@ -84,7 +84,7 @@
         <java.version>17</java.version>
         <groovy.version>4.0.17</groovy.version>
 
-        <swagger-api.version>2.2.19</swagger-api.version>
+        <swagger-api.version>2.2.20</swagger-api.version>
         <swagger-ui.version>5.10.3</swagger-ui.version>
         <springdoc.version>2.3.0</springdoc.version>
         <karate.version>1.4.1</karate.version>
@@ -246,7 +246,7 @@
                 <!-- Testing related plugins -->
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.2.2</version>
+                    <version>3.2.3</version>
                     <configuration>
                         <useFile>false</useFile>
                         <includes>
@@ -570,6 +570,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
+                <version>9.0.7</version>
                 <reportSets>
                     <reportSet>
                         <reports>
