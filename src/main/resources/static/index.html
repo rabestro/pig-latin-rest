@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pig Latin Translator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Pig Latin Translator</h1>
+<form id="translateForm">
+    <label for="inputText">Enter text:</label><br>
+    <input type="text" id="inputText" name="inputText"><br>
+    <input type="submit" value="Translate">
+</form>
+<p id="outputText"></p>
+
+<script>
+    $(document).ready(function () {
+        $("#translateForm").submit(function (event) {
+            event.preventDefault();
+            var inputText = $("#inputText").val();
+            $.ajax({
+                url: '/pig-latin',
+                type: 'post',
+                contentType: 'application/json',
+                data: JSON.stringify({"text": inputText}),
+                success: function (data) {
+                    $("#outputText").text(data.text);
+                },
+                error: function () {
+                    $("#outputText").text("An error occurred.");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
