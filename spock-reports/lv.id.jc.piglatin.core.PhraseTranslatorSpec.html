@@ -1,0 +1,1731 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<style>body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 200;
+}
+
+.back-link {
+  font-size: small;
+}
+
+table {
+  margin: 5px;
+}
+
+div.date-test-ran {
+  font-size: small;
+  font-style: italic;
+}
+
+.return-toc {
+    float: right; font-size: 60%;
+}
+
+table.features-table {
+  width: 800px;
+}
+
+table.summary-table {
+  width: 800px;
+  text-align: left;
+  font-weight: bold;
+  font-size: small;
+}
+
+table.summary-table th {
+  background: lightblue;
+  padding: 6px;
+}
+
+table.summary-table td {
+  background: #E0E0E0;
+  padding: 6px;
+}
+
+pre.title {
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: #333;
+}
+
+pre.narrative {
+  font-family: inherit;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 23px;
+  letter-spacing: -1px;
+  color: #333;
+}
+
+.feature-description {
+  font-size: large;
+  background: lightblue;
+  padding: 12px;
+}
+
+.feature-toc-error {
+  color: #F89A4F;
+}
+
+.feature-toc-failure {
+  color: #FF8080;
+}
+
+.feature-toc-ignored {
+  color: lightgray;
+}
+
+.feature-toc-pass {
+  color: green;
+}
+
+.feature-description.error {
+  background: #F89A4F;
+}
+
+.feature-description.failure {
+  background: #FF8080;
+}
+
+.feature-description.ignored {
+  background: lightgray;
+}
+
+.feature-description.ignored .reason {
+  color: black;
+  font-style: italic;
+  font-size: small;
+}
+
+div.extra-info {
+  font-size: small;
+}
+
+div.spec-headers {
+  margin: 4px;
+  font-style: italic;
+}
+
+div.spec-header {
+}
+
+div.issues {
+  margin-top: 6px;
+  padding: 10px 5px 5px 5px;
+  background-color: lemonchiffon;
+  color: black;
+  font-weight: 500;
+  font-size: small;
+  max-width: 50%;
+}
+
+div.pending-feature {
+  background-color: dodgerblue;
+  color: white;
+  margin-top: 6px;
+  padding: 5px;
+  text-align: center;
+  font-size: small;
+  max-width: 120px;
+}
+
+div.problem-description {
+  padding: 10px;
+  background: pink;
+  border-radius: 10px;
+}
+
+div.problem-header {
+  font-weight: bold;
+  color: red;
+}
+
+div.problem-list {
+
+}
+
+table.ex-table th {
+  background: lightblue;
+  padding: 5px;
+}
+
+table.ex-table td {
+  background: #E0E0E0;
+  padding: 2px 5px 2px 5px;
+}
+
+table td {
+  min-width: 50px;
+}
+
+col.block-kind-col {
+  width: 70px;
+}
+
+span.spec-header {
+  font-weight: bold;
+}
+
+div.spec-text {
+  /*color: green;*/
+}
+
+div.spec-status {
+  font-style: italic;
+}
+
+.ignored {
+  color: gray;
+}
+
+td.ex-result {
+  text-align: center;
+  background: white !important;
+}
+
+.ex-time {
+  font-style: italic;
+  font-size: smaller;
+}
+
+.ex-pass {
+  color: darkgreen;
+}
+
+.ex-fail {
+  color: red;
+  font-weight: bold;
+}
+
+div.block-kind {
+  margin: 2px;
+  font-style: italic;
+}
+
+div.block-text {
+
+}
+
+pre.block-source {
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+pre.block-source.error {
+  background-color: pink;
+  color: red;
+  font-weight: bold;
+}
+
+pre.block-source.pre-error {
+
+}
+
+pre.block-source.before-error {
+  margin-bottom: -14px;
+}
+
+pre.block-source.after-error {
+  color: gray;
+  margin-top: -14px;
+}
+
+pre.block-source.post-error {
+  color: gray;
+}
+
+div.footer {
+  text-align: center;
+  font-size: small;
+}
+</style>
+</head>
+<body>
+<h2>Report for lv.id.jc.piglatin.core.PhraseTranslatorSpec</h2>
+<hr></hr>
+<div class='back-link'>
+<a href='index.html'>&lt;&lt; Back</a>
+</div>
+<div class='summary-report'>
+<h3>Summary:</h3>
+<div class='date-test-ran'>Created on Wed Jan 03 15:13:50 EET 2024 by jegors</div>
+<table class='summary-table'>
+<thead>
+<tr>
+<th>Executed features</th>
+<th>Passed</th>
+<th>Failures</th>
+<th>Errors</th>
+<th>Skipped</th>
+<th>Success rate</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td>24</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100.0%</td>
+<td>0.042 seconds</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class='title'>Pig Latin Translator</pre>
+<pre class='narrative'>As a user
+I want to translate English phrase to Pig Latin
+So that I can communicate with my friends</pre>
+<div class='issues'>
+<div>See:</div>
+<ul>
+<li>
+<a href='https://en.wikipedia.org/wiki/Pig_Latin'>https://en.wikipedia.org/wiki/Pig_Latin</a>
+</li>
+</ul>
+</div>
+<h3>Features:</h3>
+<table class='features-table'>
+<colgroup>
+<col class='block-kind-col'></col>
+<col class='block-text-col'></col>
+</colgroup>
+<tbody>
+<ul id='toc'>
+<li>
+<a href='#-2106195622' class='feature-toc-pass'>translate English phrase to Pig Latin [0]</a>
+</li>
+<li>
+<a href='#-2106195591' class='feature-toc-pass'>translate English phrase to Pig Latin [1]</a>
+</li>
+<li>
+<a href='#-2106195560' class='feature-toc-pass'>translate English phrase to Pig Latin [2]</a>
+</li>
+<li>
+<a href='#-2106195529' class='feature-toc-pass'>translate English phrase to Pig Latin [3]</a>
+</li>
+<li>
+<a href='#-2106195498' class='feature-toc-pass'>translate English phrase to Pig Latin [4]</a>
+</li>
+<li>
+<a href='#-2106195467' class='feature-toc-pass'>translate English phrase to Pig Latin [5]</a>
+</li>
+<li>
+<a href='#-2106195436' class='feature-toc-pass'>translate English phrase to Pig Latin [6]</a>
+</li>
+<li>
+<a href='#-2106195405' class='feature-toc-pass'>translate English phrase to Pig Latin [7]</a>
+</li>
+<li>
+<a href='#-2106195374' class='feature-toc-pass'>translate English phrase to Pig Latin [8]</a>
+</li>
+<li>
+<a href='#-2106195343' class='feature-toc-pass'>translate English phrase to Pig Latin [9]</a>
+</li>
+<li>
+<a href='#-867555183' class='feature-toc-pass'>translate English phrase to Pig Latin [10]</a>
+</li>
+<li>
+<a href='#-867555152' class='feature-toc-pass'>translate English phrase to Pig Latin [11]</a>
+</li>
+<li>
+<a href='#-867555121' class='feature-toc-pass'>translate English phrase to Pig Latin [12]</a>
+</li>
+<li>
+<a href='#-867555090' class='feature-toc-pass'>translate English phrase to Pig Latin [13]</a>
+</li>
+<li>
+<a href='#-867555059' class='feature-toc-pass'>translate English phrase to Pig Latin [14]</a>
+</li>
+<li>
+<a href='#-867555028' class='feature-toc-pass'>translate English phrase to Pig Latin [15]</a>
+</li>
+<li>
+<a href='#-867554997' class='feature-toc-pass'>translate English phrase to Pig Latin [16]</a>
+</li>
+<li>
+<a href='#-867554966' class='feature-toc-pass'>translate English phrase to Pig Latin [17]</a>
+</li>
+<li>
+<a href='#-867554935' class='feature-toc-pass'>translate English phrase to Pig Latin [18]</a>
+</li>
+<li>
+<a href='#-867554904' class='feature-toc-pass'>translate English phrase to Pig Latin [19]</a>
+</li>
+<li>
+<a href='#-867554222' class='feature-toc-pass'>translate English phrase to Pig Latin [20]</a>
+</li>
+<li>
+<a href='#-867554191' class='feature-toc-pass'>translate English phrase to Pig Latin [21]</a>
+</li>
+<li>
+<a href='#-867554160' class='feature-toc-pass'>translate English phrase to Pig Latin [22]</a>
+</li>
+<li>
+<a href='#-867554129' class='feature-toc-pass'>translate English phrase to Pig Latin [23]</a>
+</li>
+</ul>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195622'>
+<span>translate English phrase to Pig Latin [0]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.001 seconds)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'></td>
+<td class='ex-value'></td>
+<td class='ex-value'>Zero - Empty string</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0.001 seconds)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195591'>
+<span>translate English phrase to Pig Latin [1]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>a</td>
+<td class='ex-value'>aay</td>
+<td class='ex-value'>One - Single character word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195560'>
+<span>translate English phrase to Pig Latin [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>apple</td>
+<td class='ex-value'>appleay</td>
+<td class='ex-value'>Word beginning with A</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195529'>
+<span>translate English phrase to Pig Latin [3]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>ear</td>
+<td class='ex-value'>earay</td>
+<td class='ex-value'>Word beginning with E</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195498'>
+<span>translate English phrase to Pig Latin [4]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>igloo</td>
+<td class='ex-value'>iglooay</td>
+<td class='ex-value'>Word beginning with I</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195467'>
+<span>translate English phrase to Pig Latin [5]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>object</td>
+<td class='ex-value'>objectay</td>
+<td class='ex-value'>Word beginning with O</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195436'>
+<span>translate English phrase to Pig Latin [6]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>under</td>
+<td class='ex-value'>underay</td>
+<td class='ex-value'>Word beginning with U</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195405'>
+<span>translate English phrase to Pig Latin [7]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>equal</td>
+<td class='ex-value'>equalay</td>
+<td class='ex-value'>Word beginning with vowel and followed by qu</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195374'>
+<span>translate English phrase to Pig Latin [8]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>pig</td>
+<td class='ex-value'>igpay</td>
+<td class='ex-value'>Word beginning with P</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2106195343'>
+<span>translate English phrase to Pig Latin [9]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>koala</td>
+<td class='ex-value'>oalakay</td>
+<td class='ex-value'>Word beginning with K</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867555183'>
+<span>translate English phrase to Pig Latin [10]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>xenon</td>
+<td class='ex-value'>enonxay</td>
+<td class='ex-value'>Word beginning with X</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867555152'>
+<span>translate English phrase to Pig Latin [11]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>qat</td>
+<td class='ex-value'>atqay</td>
+<td class='ex-value'>Word beginning with Q without a following U</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867555121'>
+<span>translate English phrase to Pig Latin [12]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>chair</td>
+<td class='ex-value'>airchay</td>
+<td class='ex-value'>Ch treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867555090'>
+<span>translate English phrase to Pig Latin [13]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>queen</td>
+<td class='ex-value'>eenquay</td>
+<td class='ex-value'>Qu treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867555059'>
+<span>translate English phrase to Pig Latin [14]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>square</td>
+<td class='ex-value'>aresquay</td>
+<td class='ex-value'>Qu and a preceding consonant treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867555028'>
+<span>translate English phrase to Pig Latin [15]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>therapy</td>
+<td class='ex-value'>erapythay</td>
+<td class='ex-value'>Th treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554997'>
+<span>translate English phrase to Pig Latin [16]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>thrush</td>
+<td class='ex-value'>ushthray</td>
+<td class='ex-value'>Thr treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554966'>
+<span>translate English phrase to Pig Latin [17]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>school</td>
+<td class='ex-value'>oolschay</td>
+<td class='ex-value'>Sch treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554935'>
+<span>translate English phrase to Pig Latin [18]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>yttria</td>
+<td class='ex-value'>yttriaay</td>
+<td class='ex-value'>Yt treated like a vowel at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554904'>
+<span>translate English phrase to Pig Latin [19]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>xray</td>
+<td class='ex-value'>xrayay</td>
+<td class='ex-value'>Xr treated like a vowel at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554222'>
+<span>translate English phrase to Pig Latin [20]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>yellow</td>
+<td class='ex-value'>ellowyay</td>
+<td class='ex-value'>Y treated like a consonant at the beginning of a word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554191'>
+<span>translate English phrase to Pig Latin [21]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>rhythm</td>
+<td class='ex-value'>ythmrhay</td>
+<td class='ex-value'>Y treated like a vowel at the end of a consonant cluster</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554160'>
+<span>translate English phrase to Pig Latin [22]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>my</td>
+<td class='ex-value'>ymay</td>
+<td class='ex-value'>Y as second letter in two letter word</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-867554129'>
+<span>translate English phrase to Pig Latin [23]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+<div class='issues'>
+<div>Issues:</div>
+<ul>
+<li>
+<span>5</span>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>pigLatinTranslator.apply(englishWord) == pigLatinWord</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>englishWord</th>
+<th class='ex-header'>pigLatinWord</th>
+<th class='ex-header'>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>quick fast run</td>
+<td class='ex-value'>ickquay astfay unray</td>
+<td class='ex-value'>A whole phrase</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr></hr>
+<div class='footer'>Generated by <a href='https://github.com/renatoathaydes/spock-reports'>Athaydes Spock Reports</a></div>
+</body>
+</html>
