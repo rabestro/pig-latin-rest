@@ -1,4 +1,6 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=lv.id.jc%3Apig-latin-rest&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=lv.id.jc%3Apig-latin-rest)
+[![API docs](https://img.shields.io/badge/API-docs-informational)](https://piglatin.azurewebsites.net/swagger-ui/index.html)
+[![Deployed on Azure](https://img.shields.io/badge/Deployed%20on-Azure-blue)](https://piglatin.azurewebsites.net)
 
 # Pig Latin Translator
 
