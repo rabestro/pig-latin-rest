@@ -17,16 +17,16 @@ headers {
 
 body:json {
   {
-    "text": "Hello, World!"
+    "sentence": "Hello, World!"
   }
 }
 
 assert {
   res.status: eq 200
   res.body: isJson
-  res.body.text: eq "ellohay, orldway!"
-  res.body.text: isDefined
-  res.body.text: isString
+  res.body.sentence: isDefined
+  res.body.sentence: isString
+  res.body.sentence: eq "ellohay, orldway!"
 }
 
 docs {

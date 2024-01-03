@@ -20,7 +20,7 @@ public class PigLatinController implements PigLatinApi {
 
     @Override
     public ResponseEntity<TranslationResponse> translate(TranslationRequest translationRequest) {
-        var textEnglish = translationRequest.getText();
+        var textEnglish = translationRequest.getSentence();
         var textPigLatin = translationService.translate(textEnglish);
         return new ResponseEntity<>(new TranslationResponse(textPigLatin), HttpStatus.OK);
     }

@@ -49,11 +49,11 @@ paths:
               $ref: '#/components/schemas/TranslationRequest'
             examples:
               example-1:
-                value: { "text": "Hello world" }
+                value: { "sentence": "Hello world" }
               example-2:
-                value: { "text": "Hello, world!" }
+                value: { "sentence": "Hello, world!" }
               example-3:
-                value: { "text": "Hello, world! How are you?" }
+                value: { "sentence": "Hello, world! How are you?" }
           application/xml:
             schema:
               $ref: '#/components/schemas/TranslationRequest'
@@ -61,17 +61,17 @@ paths:
               example-1:
                 value: |
                   <TranslationRequest>
-                    <text>The quick brown fox jumps over the lazy dog</text>
+                    <sentence>The quick brown fox jumps over the lazy dog</sentence>
                   </TranslationRequest>
               example-2:
                 value: |
                   <TranslationRequest>
-                    <text>Hello, world!</text>
+                    <sentence>Hello, world!</sentence>
                   </TranslationRequest>
               example-3:
                 value: |
                   <TranslationRequest>
-                    <text>Hello, world! How are you?</text>
+                    <sentence>Hello, world! How are you?</sentence>
                   </TranslationRequest>
 
       responses:
@@ -83,11 +83,11 @@ paths:
                 $ref: '#/components/schemas/TranslationResponse'
               examples:
                 example-1:
-                  value: { "text": "Ellohay orldway" }
+                  value: { "sentence": "Ellohay orldway" }
                 example-2:
-                  value: { "text": "Ellohay, orldway!" }
+                  value: { "sentence": "Ellohay, orldway!" }
                 example-3:
-                  value: { "text": "Ellohay, orldway! Owhay areay ouyay?" }
+                  value: { "sentence": "Ellohay, orldway! Owhay areay ouyay?" }
             application/xml:
               schema:
                 $ref: '#/components/schemas/TranslationResponse'
@@ -95,17 +95,17 @@ paths:
                 example-1:
                   value: |
                     <TranslationResponse>
-                      <text>ethay ickquay ownbray oxfay umpsjay overay ethay azylay ogday</text>
+                      <sentence>ethay ickquay ownbray oxfay umpsjay overay ethay azylay ogday</sentence>
                     </TranslationResponse>
                 example-2:
                   value: |
                     <TranslationResponse>
-                      <text>Ellohay, orldway!</text>
+                      <sentence>Ellohay, orldway!</sentence>
                     </TranslationResponse>
                 example-3:
                   value: |
                     <TranslationResponse>
-                      <text>Ellohay, orldway! Owhay areay ouyay?</text>
+                      <sentence>Ellohay, orldway! Owhay areay ouyay?</sentence>
                     </TranslationResponse>
 
         400:
@@ -144,20 +144,25 @@ paths:
 components:
   schemas:
     TranslationRequest:
+      description: |
+        The request body contains the English sentence for translation.
       type: object
-      required: [ text ]
+      required: [ sentence ]
       properties:
-        text:
+        sentence:
           type: string
           format: text
           description: English sentence for translation.
-          example: "Hello world"
+          example: "Hello, world!"
     TranslationResponse:
+      description: |
+        The response body contains the translated sentence in Pig Latin.
+        All punctuation are preserved.
       type: object
-      required: [ text ]
+      required: [ sentence ]
       properties:
-        text:
+        sentence:
           type: string
           format: text
           description: The sentence is translated into Pig Latin.
-          example: "ellohay orldway"
+          example: "ellohay, orldway!"
