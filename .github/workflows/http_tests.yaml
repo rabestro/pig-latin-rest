@@ -15,7 +15,7 @@ jobs:
           files: |-
             src/rest/smoke-test.http
             src/rest/body-json-to-xml.http
-          env_file: http-client.env.json
+          env_file: src/rest/http-client.env.json
           env: azure
           report: true
           insecure: true
