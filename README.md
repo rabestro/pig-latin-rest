@@ -2,7 +2,19 @@
 
 # Pig Latin Translator
 
-This is a REST application that translates English sentences into Pig Latin. It was created to experiment with the API-first approach: the OpenAPI specification was created first, then the code was generated for Spring, and finally, custom code was added that depends on the generated code.
+This is a REST application that translates English sentences into Pig Latin. The rules and instructions for the Pig Latin translation were obtained from the [Pig Latin exercise on the Exercism Java Track](https://exercism.org/tracks/java/exercises/pig-latin).
+
+The application was created to experiment with the API-first approach: the OpenAPI specification was created first, then the code was generated for Spring, and finally, custom code was added that depends on the generated code.
+
+## Getting Started
+
+Before opening the code for editing, run the following command to generate the necessary code:
+
+```bash
+mvn clean compile
+```
+
+This command cleans the project, compiles the source code, and generates the code that the custom code depends on. After running this command, you should be able to open the code without getting any error messages.
 
 ## Running the Application Locally
 
