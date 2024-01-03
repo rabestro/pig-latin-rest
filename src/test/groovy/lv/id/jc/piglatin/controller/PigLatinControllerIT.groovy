@@ -23,7 +23,7 @@ class PigLatinControllerIT extends Specification {
         var request = MockMvcRequestBuilders
             .post("/pig-latin")
             .contentType(MediaType.APPLICATION_JSON)
-            .content('{"text":"apple"}')
+            .content('{"sentence":"apple"}')
 
         when:
         def response = mockMvc.perform(request).andReturn().response
@@ -31,7 +31,7 @@ class PigLatinControllerIT extends Specification {
         then:
         with(response) {
             status == 200
-            contentAsString == '{"text":"appleay"}'
+            contentAsString == '{"sentence":"appleay"}'
         }
     }
 
@@ -40,8 +40,8 @@ class PigLatinControllerIT extends Specification {
         mockMvc.perform(MockMvcRequestBuilders
             .post("/pig-latin")
             .contentType(MediaType.APPLICATION_JSON)
-            .content('{"text":""}'))
+            .content('{"sentence":""}'))
             .andExpect(status().isOk())
-            .andExpect(jsonPath('$.text').value(''))
+            .andExpect(jsonPath('$.sentence').value(''))
     }
 }

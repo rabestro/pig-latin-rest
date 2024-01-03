@@ -4,7 +4,7 @@ POST {{host}}/pig-latin
 Content-Type: application/json
 
 {
-    "text": "Hello, World!"
+    "sentence": "Hello, World!"
 }
 
 > {%

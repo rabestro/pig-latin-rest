@@ -5,7 +5,7 @@ Content-Type: application/json
 Accept: application/xml
 
 {
-    "text": "Hello, World!"
+    "sentence": "Hello, World!"
 }
 
 > {%

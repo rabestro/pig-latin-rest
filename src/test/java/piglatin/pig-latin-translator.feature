@@ -6,32 +6,32 @@ Feature: Pig Latin API
         * path '/pig-latin'
 
     Scenario: Hello World!
-        Given request {"text": "Hello World!"}
+        Given request {"sentence": "Hello World!"}
         When method post
         Then status 200
-        And match response.text == 'ellohay orldway!'
+        And match response.sentence == 'ellohay orldway!'
 
     Scenario: Translate phrase to Pig Latin
         * def sentence =
       """
       {
-        "text": "The quick brown fox jumps over the lazy dog"
+        "sentence": "The quick brown fox jumps over the lazy dog"
       }
       """
 
         Given request sentence
         When method post
         Then status 200
-        * def text = response.text
+        * def text = response.sentence
         And match text == 'ethay ickquay ownbray oxfay umpsjay overay ethay azylay ogday'
 
 
     Scenario Outline: Translate "<text>"
-        * def phrase = { "text": "<text>" }
+        * def phrase = { "sentence": "<text>" }
         Given request phrase
         When method post
         Then status 200
-        * def text = response.text
+        * def text = response.sentence
         And match text == '<pig-latin>'
 
         Examples:

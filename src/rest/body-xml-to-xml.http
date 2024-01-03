@@ -9,7 +9,7 @@ Content-Type: application/xml
 Accept: application/xml
 
 <TranslationRequest>
-    <text>{{text}}</text>
+    <sentence>{{text}}</sentence>
 </TranslationRequest>
 
 > {%
