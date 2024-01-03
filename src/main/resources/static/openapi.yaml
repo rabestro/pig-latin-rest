@@ -54,6 +54,26 @@ paths:
                 value: { "text": "Hello, world!" }
               example-3:
                 value: { "text": "Hello, world! How are you?" }
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/TranslationRequest'
+            examples:
+              example-1:
+                value: |
+                  <TranslationRequest>
+                    <text>The quick brown fox jumps over the lazy dog</text>
+                  </TranslationRequest>
+              example-2:
+                value: |
+                  <TranslationRequest>
+                    <text>Hello, world!</text>
+                  </TranslationRequest>
+              example-3:
+                value: |
+                  <TranslationRequest>
+                    <text>Hello, world! How are you?</text>
+                  </TranslationRequest>
+
       responses:
         200:
           description: English sentence successfully translated into Pig Latin.
@@ -68,6 +88,26 @@ paths:
                   value: { "text": "Ellohay, orldway!" }
                 example-3:
                   value: { "text": "Ellohay, orldway! Owhay areay ouyay?" }
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/TranslationResponse'
+              examples:
+                example-1:
+                  value: |
+                    <TranslationResponse>
+                      <text>ethay ickquay ownbray oxfay umpsjay overay ethay azylay ogday</text>
+                    </TranslationResponse>
+                example-2:
+                  value: |
+                    <TranslationResponse>
+                      <text>Ellohay, orldway!</text>
+                    </TranslationResponse>
+                example-3:
+                  value: |
+                    <TranslationResponse>
+                      <text>Ellohay, orldway! Owhay areay ouyay?</text>
+                    </TranslationResponse>
+
         400:
           description: |
             The request body is invalid. The response body contains the error message.
