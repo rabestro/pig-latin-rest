@@ -14,7 +14,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>
-        PigLatin REST
+        Pig Latin Translator
     </name>
     <description>
         PigLatin translator REST service
@@ -263,6 +263,21 @@
                             <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
                         </statelessTestsetReporter>
                         <argLine>-Dfile.encoding=UTF-8</argLine>
+                        <systemPropertyVariables>
+                            <!-- Spock Reports -->
+                            <com.athaydes.spockframework.report.projectName>
+                                ${project.name}
+                            </com.athaydes.spockframework.report.projectName>
+                            <com.athaydes.spockframework.report.projectVersion>
+                                ${project.version}
+                            </com.athaydes.spockframework.report.projectVersion>
+                            <com.athaydes.spockframework.report.outputDir>
+                                ${project.build.directory}/site/spock-reports
+                            </com.athaydes.spockframework.report.outputDir>
+                            <com.athaydes.spockframework.report.showCodeBlocks>
+                                true
+                            </com.athaydes.spockframework.report.showCodeBlocks>
+                        </systemPropertyVariables>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -295,7 +310,8 @@
                             <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
                             <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
                         </statelessTestsetReporter>
-                        <statelessTestsetInfoReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
+                        <statelessTestsetInfoReporter
+                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
                             <disable>false</disable>
                             <usePhrasedFileName>false</usePhrasedFileName>
                             <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
