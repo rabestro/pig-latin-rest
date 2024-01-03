@@ -1,0 +1,24 @@
+### Translate to Pig Latin
+
+< {%
+    request.variables.set("text", "Hello, World!")
+%}
+
+POST {{host}}/pig-latin
+Content-Type: application/xml
+Accept: application/xml
+
+<TranslationRequest>
+    <text>{{text}}</text>
+</TranslationRequest>
+
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+
+    client.test("Response content-type is xml", function () {
+        const type = response.contentType.mimeType;
+        client.assert(type === "application/xml", `Expected 'application/xml' but received '${type}'`);
+    });
+%}

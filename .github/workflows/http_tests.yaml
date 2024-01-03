@@ -1,0 +1,21 @@
+name: JetBrains HTTP Client API Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Execute HTTP requests
+        uses: madhead/intellij-http-client-action@latest
+        with:
+          files: |-
+            src/rest/smoke-test.http
+            src/rest/body-json-to-xml.http
+          env_file: http-client.env.json
+          env: azure
+          report: true
+          insecure: true
