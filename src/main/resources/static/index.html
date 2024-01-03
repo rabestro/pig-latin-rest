@@ -27,9 +27,9 @@
                 url: '/pig-latin',
                 type: 'post',
                 contentType: 'application/json',
-                data: JSON.stringify({ "text": inputText }),
+                data: JSON.stringify({ "sentence": inputText }),
                 success: function(data) {
-                    $("#outputText").text(data.text);
+                    $("#outputText").text(data.sentence);
                 },
                 error: function() {
                     $("#outputText").text("An error occurred.");
