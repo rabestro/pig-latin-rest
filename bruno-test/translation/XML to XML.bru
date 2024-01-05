@@ -31,7 +31,7 @@ body:xml {
       Yellow Submarine
     </sentence>
   </TranslationRequest>
-  
+
 }
 
 assert {
@@ -40,15 +40,13 @@ assert {
 }
 
 tests {
-  const _ = require('lodash');
-  
-  test("should return correct translation", function() {
-    let body = res.getBody();
-    let sentenceStart = body.indexOf('<sentence>') + 10;
-    let sentenceEnd = body.indexOf('</sentence>');
-    let sentence = _.trim(body.substring(sentenceStart, sentenceEnd));
-    
-    expect(sentence).to.equal('ellowyay ubmarinesay');
+  const { xml2js } = require('xml2js');
+
+  test("should return error message", function() {
+    xml2js.parseString(res.getBody(), function (err, result) {
+      expect(err).to.be.null;
+      expect(result.TranslationResponse.sentence[0]).to.equal('ellowyay ubmarinesay');
+    });
   });
 }
 
