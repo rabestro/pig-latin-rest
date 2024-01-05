@@ -1,0 +1,25 @@
+meta {
+  name: No Body to XML
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/xml
+  Accept: application/xml
+}
+
+assert {
+  res.status: eq 400
+  res.body: startsWith <Map>
+}
+
+docs {
+  An error message is expected when sending an empty payload
+}
