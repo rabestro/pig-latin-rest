@@ -1,7 +1,7 @@
 meta {
   name: Bad Request (Null)
   type: http
-  seq: 2
+  seq: 3
 }
 
 post {
@@ -22,5 +22,5 @@ assert {
   res.body.timestamp: isDefined
   res.body.timestamp: matches \d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}
   res.body.status: isNumber
-  res.body.path: isDefined 
+  res.body.path: isDefined
 }
