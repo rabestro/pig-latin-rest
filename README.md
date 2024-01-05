@@ -37,12 +37,22 @@ You can use the simple web interface at https://piglatin.azurewebsites.net and t
 
 The application includes API tests written with two frameworks: Karate and Bruno.
 
+### Bruno
+
 To run the Bruno API tests, use the following commands:
 
 ```bash
 cd bruno-test
 npm run test
 ```
+
+Succssful test results will look like this:
+https://github.com/rabestro/pig-latin-rest/runs/20210504657
+
+Failing test results will look like this:
+https://github.com/rabestro/pig-latin-rest/runs/20211225193
+
+### Karate
 
 To run the Karate API tests, use the following command:
 
