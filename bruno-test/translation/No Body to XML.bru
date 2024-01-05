@@ -15,25 +15,6 @@ headers {
   Accept: application/xml
 }
 
-body:json {
-  {
-    "sentence": "Yellow Submarine"
-  }
-}
-
-body:text {
-  Yellow Submarine
-}
-
-body:xml {
-  <TranslationRequest>
-    <sentence>
-      Yellow Submarine
-    </sentence>
-  </TranslationRequest>
-  
-}
-
 assert {
   res.status: eq 400
   res.body: startsWith <Map>
@@ -41,7 +22,7 @@ assert {
 
 tests {
   const { xml2js } = require('xml2js');
-  
+
   test("should return correct translation", function() {
     xml2js.parseString(res.getBody(), function (err, result) {
       expect(err).to.be.null;
@@ -51,5 +32,5 @@ tests {
 }
 
 docs {
-  Translate English sentence to Pig Latin
+  An error message is expected when sending an empty payload
 }
