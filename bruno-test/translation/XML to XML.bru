@@ -1,0 +1,57 @@
+meta {
+  name: XML to XML
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: xml
+  auth: none
+}
+
+headers {
+  Content-Type: application/xml
+  Accept: application/xml
+}
+
+body:json {
+  {
+    "sentence": "Yellow Submarine"
+  }
+}
+
+body:text {
+  Yellow Submarine
+}
+
+body:xml {
+  <TranslationRequest>
+    <sentence>
+      Yellow Submarine
+    </sentence>
+  </TranslationRequest>
+  
+}
+
+assert {
+  res.status: eq 200
+  ~res.body: contains ellowyay ubmarinesay
+}
+
+tests {
+  const _ = require('lodash');
+  
+  test("should return correct translation", function() {
+    let body = res.getBody();
+    let sentenceStart = body.indexOf('<sentence>') + 10;
+    let sentenceEnd = body.indexOf('</sentence>');
+    let sentence = _.trim(body.substring(sentenceStart, sentenceEnd));
+    
+    expect(sentence).to.equal('ellowyay ubmarinesay');
+  });
+}
+
+docs {
+  Translate English sentence to Pig Latin
+}
