@@ -1,0 +1,4 @@
+TranslationRequest:
+  $ref: 'TranslationRequest.yaml'
+TranslationResponse:
+  $ref: 'TranslationResponse.yaml'

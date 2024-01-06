@@ -1,0 +1,10 @@
+type: object
+description: |
+  The request body contains the English sentence for translation.
+required: [ sentence ]
+properties:
+  sentence:
+    type: string
+    format: text
+    description: English sentence for translation.
+    example: "Hello, world!"
