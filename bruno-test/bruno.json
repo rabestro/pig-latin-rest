@@ -5,5 +5,11 @@
   "presets": {
     "requestType": "http",
     "requestUrl": ""
+  }, 
+"scripts": {
+    "moduleWhitelist": [
+      "events"
+    ]
   }
+
 }
