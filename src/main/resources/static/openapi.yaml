@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Pig Latin translator
   summary: Translate text to Pig Latin
-  description: |
+  description:
     Pig Latin is a made-up children's language that's intended to be confusing.
     It obeys a few simple rules (below), but when it's spoken quickly it's really difficult for non-children (and non-native speakers) to understand.
 
@@ -31,6 +31,9 @@ tags:
   - name: Translation
     description: |
       Translate english sentence to Pig Latin.
+    externalDocs:
+      description: Pig Latin
+      url: https://en.wikipedia.org/wiki/Pig_Latin
 
 paths:
   /pig-latin:
@@ -144,25 +147,6 @@ paths:
 components:
   schemas:
     TranslationRequest:
-      description: |
-        The request body contains the English sentence for translation.
-      type: object
-      required: [ sentence ]
-      properties:
-        sentence:
-          type: string
-          format: text
-          description: English sentence for translation.
-          example: "Hello, world!"
+      $ref: 'schemas/TranslationRequest.yaml'
     TranslationResponse:
-      description: |
-        The response body contains the translated sentence in Pig Latin.
-        All punctuation are preserved.
-      type: object
-      required: [ sentence ]
-      properties:
-        sentence:
-          type: string
-          format: text
-          description: The sentence is translated into Pig Latin.
-          example: "ellohay, orldway!"
+      $ref: 'schemas/TranslationResponse.yaml'

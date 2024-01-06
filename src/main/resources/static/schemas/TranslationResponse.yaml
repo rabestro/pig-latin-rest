@@ -1,0 +1,11 @@
+type: object
+description: |
+  The response body contains the translated sentence in Pig Latin.
+  All punctuation are preserved.
+required: [ sentence ]
+properties:
+  sentence:
+    type: string
+    format: text
+    description: The sentence is translated into Pig Latin.
+    example: "ellohay, orldway!"

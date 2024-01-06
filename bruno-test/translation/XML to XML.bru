@@ -15,16 +15,6 @@ headers {
   Accept: application/xml
 }
 
-body:json {
-  {
-    "sentence": "Yellow Submarine"
-  }
-}
-
-body:text {
-  Yellow Submarine
-}
-
 body:xml {
   <TranslationRequest>
     <sentence>
@@ -40,12 +30,13 @@ assert {
 }
 
 tests {
-  const { xml2js } = require('xml2js');
+  const xml2js = require('xml2js');
 
-  test("should return error message", function() {
+  test("should translate message", function() {
     xml2js.parseString(res.getBody(), function (err, result) {
       expect(err).to.be.null;
-      expect(result.TranslationResponse.sentence[0]).to.equal('ellowyay ubmarinesay');
+      const actualSentence = result.TranslationResponse.sentence[0].trim()
+      expect(actualSentence).to.equal('ellowyay ubmarinesay');
     });
   });
 }
