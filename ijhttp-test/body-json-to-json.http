@@ -2,7 +2,7 @@
 
 POST {{host}}/pig-latin
 Content-Type: application/json
-Accept: application/xml
+Accept: application/json
 
 {
     "sentence": "Hello, World!"
