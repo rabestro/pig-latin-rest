@@ -2,8 +2,9 @@
 
 GET {{host}}/swagger-ui/index.html
 
-> {%
-    client.test("Request executed successfully", function () {
-        client.assert(response.status === 200, "Response status is not 200");
+> {% import './scripts/validate-200-response';
+
+    client.test("Response body contains 'swagger-ui'", function () {
+        client.assert(response.body.match(/swagger-ui/), "Response doesn't contains 'swagger-ui'");
     });
 %}

@@ -15,12 +15,7 @@ jobs:
       - name: Execute HTTP requests
         uses: madhead/intellij-http-client-action@latest
         with:
-          files: |-
-            ijhttp-test/smoke-test.http
-            ijhttp-test/body-json-to-json.http
-            ijhttp-test/body-text-to-json.http
-            ijhttp-test/body-xml-to-xml.http
-            ijhttp-test/api-docs.http
+          files: ijhttp-test/*.http
           env_file: ijhttp-test/http-client.env.json
           env: azure
           report: true
@@ -31,5 +26,5 @@ jobs:
         if: success() || failure()                # run this step even if previous step failed
         with:
           name: JetBrains HTTP Client API Tests   # Name of the check run which will be created
-          path: reports/report.xml    # Path to test results
+          path: reports/report.xml                # Path to test results
           reporter: java-junit                    # Format of test results

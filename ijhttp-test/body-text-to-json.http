@@ -1,4 +1,4 @@
-### Translate to Pig Latin
+### Translate to Pig Latin (Simple Text)
 
 POST {{host}}/pig-latin
 Content-Type: application/json
@@ -7,7 +7,6 @@ Accept: application/json
 "Hello, World!"
 
 > {%
-    client.test("Request executed successfully", function () {
-        client.assert(response.status === 200, "Response status is not 200");
-    });
+    import './scripts/validate-200-response';
+    import './scripts/validate-content-json';
 %}

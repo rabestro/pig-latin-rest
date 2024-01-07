@@ -1,13 +1,10 @@
-### Translate to Pig Latin
+### Bad request (payload is null)
 
 POST {{host}}/pig-latin
-Accept-Language: EN
 Content-Type: application/json
 Accept: application/json
 
-{
-    "sentence": "Hello, World!"
-}
+null
 
 > {%
     import './scripts/validate-200-response';
@@ -15,11 +12,5 @@ Accept: application/json
 
     client.test("Sentence option exists", function () {
         client.assert(response.body.hasOwnProperty("sentence"), "Cannot find 'sentence' option in response");
-    });
-
-    client.test("Sentence translated correctly", function () {
-        const expected = 'ellohay, orldway!'
-        const sentence = response.body.sentence
-        client.assert(sentence === expected, `Expected '${expected}' but received '${sentence}'`);
     });
 %}

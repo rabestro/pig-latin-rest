@@ -1,4 +1,4 @@
-### Translate to Pig Latin
+### Translate to Pig Latin (XML to XML)
 
 < {%
     request.variables.set("text", "Hello, World!")
@@ -13,9 +13,7 @@ Accept: application/xml
 </TranslationRequest>
 
 > {%
-    client.test("Request executed successfully", function () {
-        client.assert(response.status === 200, "Response status is not 200");
-    });
+    import './scripts/validate-200-response';
 
     client.test("Response content-type is xml", function () {
         const type = response.contentType.mimeType;
