@@ -5,7 +5,7 @@
     "homepage": "https://piglatin.azurewebsites.net",
     "main": "index.js",
     "scripts": {
-        "test": "bru run --env azure --format junit --output results.xml"
+        "test": "bru run --env azure --format junit --output report.xml"
     },
     "author": "Jegors Čemisovs. <jegors_cemisovs@epam.com>",
     "license": "MIT",

@@ -1,0 +1,32 @@
+name: JetBrains HTTP Client API Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run_ijhttp_api_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Execute HTTP requests
+        uses: madhead/intellij-http-client-action@latest
+        with:
+          files: |-
+            ijhttp-test/smoke-test.http
+            ijhttp-test/body-json-to-json.http
+            ijhttp-test/body-text-to-json.http
+            ijhttp-test/body-json-to-xml.http
+            ijhttp-test/api-docs.http
+          env_file: ijhttp-test/http-client.env.json
+          env: azure
+          report: true
+          insecure: true
+
+      - name: Publish Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()          # run this step even if previous step failed
+        with:
+          name: Bruno API Tests             # Name of the check run which will be created
+          path: ijhttp-test/report.xml      # Path to test results
+          reporter: java-junit              # Format of test results
