@@ -35,7 +35,11 @@ You can use the simple web interface at https://piglatin.azurewebsites.net and t
 
 ## API Testing
 
-The application includes API tests written with two frameworks: Karate and Bruno.
+The application includes API tests written with frameworks:
+- Karate
+- Bruno
+- JetBrains HTTP Client
+- Apache jMeter
 
 ### Bruno
 
