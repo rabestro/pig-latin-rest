@@ -2,7 +2,10 @@ name: JetBrains HTTP Client API Tests
 
 on:
   workflow_dispatch:
-
+permissions:
+  contents: read
+  actions: read
+  checks: write
 jobs:
   run_ijhttp_api_test:
     runs-on: ubuntu-latest
