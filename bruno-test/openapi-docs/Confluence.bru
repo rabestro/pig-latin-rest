@@ -1,0 +1,16 @@
+meta {
+  name: Confluence
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://rabestro.atlassian.net/wiki/spaces/PLT/pages/3768326/API+Documentation+Remote
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: contains Atlassian
+}

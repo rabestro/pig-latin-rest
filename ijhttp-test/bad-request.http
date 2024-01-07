@@ -7,10 +7,11 @@ Accept: application/json
 null
 
 > {%
-    import './scripts/validate-200-response';
     import './scripts/validate-content-json';
-
-    client.test("Sentence option exists", function () {
-        client.assert(response.body.hasOwnProperty("sentence"), "Cannot find 'sentence' option in response");
+    client.test("Request returns status 400", function () {
+        client.assert(response.status === 400, `Expected '400' but received '${response.status}'`);
+    });
+    client.test("Error option exists", function () {
+        client.assert(response.body.hasOwnProperty("error"), "Cannot find 'error' option in response");
     });
 %}
