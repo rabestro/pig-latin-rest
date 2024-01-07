@@ -50,11 +50,18 @@ cd bruno-test
 npm run test
 ```
 
-Succssful test results will look like this:
-https://github.com/rabestro/pig-latin-rest/runs/20210504657
+Successful test report:
+https://github.com/rabestro/pig-latin-rest/runs/20240100050
 
-Failing test results will look like this:
+Failed test report:
 https://github.com/rabestro/pig-latin-rest/runs/20211225193
+
+### JetBrains HTTP Client
+
+[![HTTP Client - Secret Weapon for Web Service Testing](https://img.youtube.com/vi/VMUaOZ6kvJ0/default.jpg)](https://www.youtube.com/watch?v=VMUaOZ6kvJ0)
+
+Successful test report:
+https://github.com/rabestro/pig-latin-rest/runs/20240718373
 
 ### Karate
 
@@ -63,7 +70,3 @@ To run the Karate API tests, use the following command:
 ```bash
 mvn clean test -Dtest=TestRunner
 ```
-
-## Specification-First Development
-
-This application was developed using the specification-first approach. The specifications were written first using the Spock framework, and then the implementation was added.
