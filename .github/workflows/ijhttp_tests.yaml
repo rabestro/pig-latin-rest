@@ -28,5 +28,5 @@ jobs:
         if: success() || failure()                # run this step even if previous step failed
         with:
           name: JetBrains HTTP Client API Tests   # Name of the check run which will be created
-          path: ijhttp-test/reports/report.xml    # Path to test results
+          path: reports/report.xml    # Path to test results
           reporter: java-junit                    # Format of test results

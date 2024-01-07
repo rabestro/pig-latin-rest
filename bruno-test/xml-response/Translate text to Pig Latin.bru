@@ -4,6 +4,10 @@ meta {
   seq: 1
 }
 
+docs {
+  Translate English sentence to Pig Latin
+}
+
 post {
   url: {{host}}/pig-latin
   body: json
@@ -21,15 +25,6 @@ body:json {
   }
 }
 
-assert {
-  res.status: eq 200
-  res.body: contains "ellohay, orldway!"
-  sentence: isDefined
-  sentence: isString
-  sentence: eq ellohay, orldway!
-  sentence: matches \w+, \w+!
-}
-
 script:post-response {
   const xpath = require('xpath');
   const dom = require('xmldom').DOMParser;
@@ -44,6 +39,11 @@ script:post-response {
   
 }
 
-docs {
-  Translate English sentence to Pig Latin
+assert {
+  res.status: eq 200
+  res.body: contains "ellohay, orldway!"
+  sentence: isDefined
+  sentence: isString
+  sentence: eq ellohay, orldway!
+  sentence: matches \w+, \w+!
 }
