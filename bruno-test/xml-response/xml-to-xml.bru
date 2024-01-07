@@ -1,7 +1,7 @@
 meta {
   name: XML to XML
   type: http
-  seq: 4
+  seq: 3
 }
 
 post {
@@ -21,17 +21,22 @@ body:xml {
       Yellow Submarine
     </sentence>
   </TranslationRequest>
-
+  
 }
 
 assert {
   res.status: eq 200
-  ~res.body: contains ellowyay ubmarinesay
+  res.body: contains ellowyay ubmarinesay
 }
 
 tests {
   const xml2js = require('xml2js');
-
+  
+  test('should return XML payload', function() {
+    const contentType = res.getHeader('content-type');
+    expect(contentType).to.equal('application/xml');
+  });
+  
   test("should translate message", function() {
     xml2js.parseString(res.getBody(), function (err, result) {
       expect(err).to.be.null;
@@ -39,6 +44,7 @@ tests {
       expect(actualSentence).to.equal('ellowyay ubmarinesay');
     });
   });
+  
 }
 
 docs {

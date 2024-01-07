@@ -1,0 +1,49 @@
+meta {
+  name: Translate text to Pig Latin
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/xml
+}
+
+body:json {
+  {
+    "sentence": "Hello, World!"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body: contains "ellohay, orldway!"
+  sentence: isDefined
+  sentence: isString
+  sentence: eq ellohay, orldway!
+  sentence: matches \w+, \w+!
+}
+
+script:post-response {
+  const xpath = require('xpath');
+  const dom = require('xmldom').DOMParser;
+  
+  const doc = new dom().parseFromString(res.body, 'text/xml');
+  const query = "//sentence/text()";
+  const sentence = xpath.select(query, doc)[0].nodeValue;
+  
+  console.log(sentence);  // "ellohay, orldway!"
+  
+  bru.setVar("sentence", sentence);
+  
+}
+
+docs {
+  Translate English sentence to Pig Latin
+}
