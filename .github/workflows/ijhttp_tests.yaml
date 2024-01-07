@@ -15,7 +15,14 @@ jobs:
       - name: Execute HTTP requests
         uses: madhead/intellij-http-client-action@latest
         with:
-          files: ijhttp-test/*.http
+          files: |-
+            ijhttp-test/smoke-test.http
+            ijhttp-test/body-json-to-json.http
+            ijhttp-test/body-text-to-json.http
+            ijhttp-test/body-xml-to-xml.http
+            ijhttp-test/bad-request.http
+            ijhttp-test/api-docs.http
+
           env_file: ijhttp-test/http-client.env.json
           env: azure
           report: true
