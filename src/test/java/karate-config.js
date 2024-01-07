@@ -4,9 +4,8 @@ function fn() {
     if (!env) {
         env = 'azure';
     }
-    const config = {
-        env: env,
-    }
+    const config = { env }
+
     if (env === 'dev') {
         config.baseUrl = 'http://localhost:8080';
     } else if (env === 'azure') {

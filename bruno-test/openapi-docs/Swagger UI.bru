@@ -1,0 +1,16 @@
+meta {
+  name: Swagger UI
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/swagger-ui/index.html
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: contains Swagger UI
+}

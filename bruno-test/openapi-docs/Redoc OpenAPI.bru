@@ -1,0 +1,16 @@
+meta {
+  name: Redoc OpenAPI
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/ui/redoc.html
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body: contains Pig Latin Translator API
+}

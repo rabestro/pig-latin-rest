@@ -63,6 +63,9 @@ https://github.com/rabestro/pig-latin-rest/runs/20211225193
 Successful test report:
 https://github.com/rabestro/pig-latin-rest/runs/20240718373
 
+Failed test report:
+https://github.com/rabestro/pig-latin-rest/runs/20241724987
+
 ### Karate
 
 To run the Karate API tests, use the following command:
