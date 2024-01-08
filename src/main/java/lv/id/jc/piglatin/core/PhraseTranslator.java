@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
 
+/**
+ * The PhraseTranslator class translates a phrase to Pig Latin.
+ */
 @Component("phraseTranslator")
 public class PhraseTranslator implements UnaryOperator<String> {
     private final Function<String, Matcher> wordMatcher;
