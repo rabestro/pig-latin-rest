@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * PigLatinController handles translation requests for translating English sentences to Pig Latin.
+ */
 @RestController
 public class PigLatinController implements PigLatinApi {
 
