@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Jan 09 22:24:38 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Tue Jan 09 23:12:01 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -276,12 +276,12 @@ div.footer {
 <tbody>
 <tr>
 <td>3</td>
-<td>3</td>
+<td>2</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100.0%</td>
-<td>0.050 seconds</td>
+<td>66.67%</td>
+<td>0.070 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +298,7 @@ div.footer {
 <a href='#1641594895' class='feature-toc-pass'>translate method with valid TranslationRequest</a>
 </li>
 <li>
-<a href='#1469567373' class='feature-toc-pass'>translate method with empty text</a>
+<a href='#1469567373' class='feature-toc-failure'>translate method with empty text</a>
 </li>
 <li>
 <a href='#-602742881' class='feature-toc-pass'>translate method when TranslationService throws exception</a>
@@ -310,7 +310,7 @@ div.footer {
 <span>translate method with valid TranslationRequest</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.011 seconds)</div>
+<div class='ex-time'>(0.010 seconds)</div>
 </span>
 </div>
 </td>
@@ -344,11 +344,11 @@ result.body == response</pre>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='1469567373'>
+<div class='feature-description failure' id='1469567373'>
 <span>translate method with empty text</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
+<div class='ex-time'>(0.011 seconds)</div>
 </span>
 </div>
 </td>
@@ -358,7 +358,7 @@ result.body == response</pre>
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>def request = new TranslationRequest('')
+<pre class='block-source pre-error'>def request = new TranslationRequest('')
 def response = new TranslationResponse('')
 translationService.translate('') &gt;&gt; ''</pre>
 </td>
@@ -368,7 +368,7 @@ translationService.translate('') &gt;&gt; ''</pre>
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<pre class='block-source'>ResponseEntity&lt;TranslationResponse&gt; result = controller.translate(request)</pre>
+<pre class='block-source pre-error'>ResponseEntity&lt;TranslationResponse&gt; result = controller.translate(request)</pre>
 </td>
 </tr>
 <tr>
@@ -376,8 +376,22 @@ translationService.translate('') &gt;&gt; ''</pre>
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<pre class='block-source'>result.statusCode == HttpStatus.OK
-result.body == response</pre>
+<pre class='block-source error'>result.statusCode == HttpStatus.OK // line 42</pre>
+<pre class='block-source after-error'>result.body == response</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>result.statusCode == HttpStatus.OK<br/>|      |          |  |          |<br/>|      |          |  |          200 OK<br/>|      |          |  class org.springframework.http.HttpStatus<br/>|      |          false<br/>|      418 I_AM_A_TEAPOT<br/>&lt;418 I_AM_A_TEAPOT I&apos;m a teapot,[]&gt;<br/></pre>
+</li>
+</ul>
+</div>
+</div>
 </td>
 </tr>
 <tr>
@@ -386,7 +400,7 @@ result.body == response</pre>
 <span>translate method when TranslationService throws exception</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.002 seconds)</div>
+<div class='ex-time'>(0.001 seconds)</div>
 </span>
 </div>
 </td>
