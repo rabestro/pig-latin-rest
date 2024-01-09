@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Pig Latin translator
   summary: Translate text to Pig Latin
-  description:
+  description: |
     Pig Latin is a made-up children's language that's intended to be confusing.
     It obeys a few simple rules (below), but when it's spoken quickly it's really difficult for non-children (and non-native speakers) to understand.
 
@@ -78,7 +78,7 @@ paths:
                   </TranslationRequest>
 
       responses:
-        200:
+        '200':
           description: English sentence successfully translated into Pig Latin.
           content:
             application/json:
@@ -111,7 +111,7 @@ paths:
                       <sentence>Ellohay, orldway! Owhay areay ouyay?</sentence>
                     </TranslationResponse>
 
-        400:
+        '400':
           description: |
             The request body is invalid. The response body contains the error message.
           content:
@@ -143,6 +143,10 @@ paths:
               examples:
                 example-1:
                   value: { "timestamp": "2021-08-15T12:34:56.789Z", "status": 400, "error": "Bad Request", "path": "/pig-latin" }
+
+        '418':
+          description: This cannot be translated into Pig Latin...
+          content: {}
 
 components:
   schemas:
