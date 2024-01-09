@@ -1,0 +1,22 @@
+meta {
+  name: Sentence can't be translated
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "sentence": "$#±@%&!"
+  }
+}
+
+assert {
+  res.status: eq 418
+  res.body: isEmpty
+}
