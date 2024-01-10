@@ -29,18 +29,16 @@ class PigLatinControllerSpec extends Specification {
         result.body == response
     }
 
-    def "translate method with empty text"() {
+    def "can't translate empty text"() {
         given:
         def request = new TranslationRequest('')
-        def response = new TranslationResponse('')
         translationService.translate('') >> ''
 
         when:
         ResponseEntity<TranslationResponse> result = controller.translate(request)
 
         then:
-        result.statusCode == HttpStatus.OK
-        result.body == response
+        result.statusCode == HttpStatus.I_AM_A_TEAPOT
     }
 
     def "translate method when TranslationService throws exception"() {

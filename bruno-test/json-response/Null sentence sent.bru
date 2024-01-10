@@ -18,5 +18,7 @@ body:json {
 
 assert {
   res.status: eq 400
-  res.body: isJson 
+  res.body: isJson
+  res.body.error: isDefined
+  res.body.error: contains Bad Request
 }
