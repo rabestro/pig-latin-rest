@@ -56,6 +56,9 @@ https://github.com/rabestro/pig-latin-rest/runs/20240100050
 Failed test report:
 https://github.com/rabestro/pig-latin-rest/runs/20211225193
 
+> [!NOTE]  
+> Note - Bruno's script support might also be used for light test automation based on project specifics.
+
 ### JetBrains HTTP Client
 
 [![HTTP Client - Secret Weapon for Web Service Testing](https://img.youtube.com/vi/VMUaOZ6kvJ0/default.jpg)](https://www.youtube.com/watch?v=VMUaOZ6kvJ0)
