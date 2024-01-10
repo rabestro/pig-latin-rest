@@ -1,0 +1,24 @@
+meta {
+  name: Null sentence sent
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "sentence": null
+  }
+}
+
+assert {
+  res.status: eq 400
+  res.body: isJson
+  res.body.error: isDefined
+  res.body.error: contains Bad Request
+}
