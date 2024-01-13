@@ -63,6 +63,9 @@ https://github.com/rabestro/pig-latin-rest/runs/20211225193
 
 [![HTTP Client - Secret Weapon for Web Service Testing](https://img.youtube.com/vi/VMUaOZ6kvJ0/default.jpg)](https://www.youtube.com/watch?v=VMUaOZ6kvJ0)
 
+[![HTTP Client CLI](https://img.youtube.com/vi/mwiHAukbWjM/default.jpg)](https://www.youtube.com/watch?v=mwiHAukbWjM)
+
+
 Successful test report:
 https://github.com/rabestro/pig-latin-rest/runs/20240718373
 
