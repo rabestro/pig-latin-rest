@@ -1,0 +1,23 @@
+type: object
+required: [ message ]
+properties:
+  timestamp:
+    type: string
+    format: date-time
+    description: The date and time of the error.
+    example: "2021-08-15T12:34:56.789Z"
+  status:
+    type: integer
+    format: int32
+    description: The HTTP status code.
+    example: 400
+  error:
+    type: string
+    format: text
+    description: The error message.
+    example: "Bad Request"
+  path:
+    type: string
+    format: text
+    description: The request path.
+    example: "/pig-latin"
