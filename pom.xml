@@ -17,7 +17,12 @@
         Pig Latin Translator
     </name>
     <description>
-        PigLatin translator REST service
+        The Pig Latin Translator is a REST application that translates English sentences into Pig Latin.
+        The application was developed using an API-first approach, starting with the creation of an OpenAPI specification.
+        Code was then generated for Spring, and custom code was added that depends on the generated code.
+        The rules and instructions for the Pig Latin translation were obtained from the Pig Latin exercise on the Exercism Java Track.
+        The application is deployed on Azure and includes a simple web interface and a Swagger UI.
+        It also includes API tests written with the Karate and Bruno frameworks.
     </description>
     <url>
         https://github.com/rabestro/pig-latin-rest
