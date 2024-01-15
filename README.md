@@ -29,9 +29,11 @@ This will start the application on localhost:8080. You can access the Swagger UI
 
 ## Deployed Application
 
-The application is deployed on Azure at the following URL: https://piglatin.azurewebsites.net.
+The application is deployed on Azure at https://piglatin.azurewebsites.net.
 
-You can use the simple web interface at https://piglatin.azurewebsites.net and the Swagger UI at https://piglatin.azurewebsites.net/swagger-ui/index.html.
+You can use the simple [web interface](https://piglatin.azurewebsites.net) and the [Swagger UI](https://piglatin.azurewebsites.net/swagger-ui/index.html).
+
+Please note that the application is deployed on the free-tier F1 plan. This means that if the application is in sleep mode, it may take about a minute for the first API call to wake it up. Subsequent API calls should be faster.
 
 ## API Testing
 
@@ -56,7 +58,7 @@ https://github.com/rabestro/pig-latin-rest/runs/20240100050
 Failed test report:
 https://github.com/rabestro/pig-latin-rest/runs/20211225193
 
-> [!NOTE]  
+> [!NOTE]
 > Note - Bruno's script support might also be used for light test automation based on project specifics.
 
 ### JetBrains HTTP Client
