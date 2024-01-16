@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "f4eb9cca-60ab-45ed-b0bd-381c1422e272",
+		"name": "Pig Latin Translator",
+		"description": "# Description\n\nThis is a REST application that translates English sentences into Pig Latin. The rules and instructions for the Pig Latin translation were obtained from the [Pig Latin exercise on the Exercism Java Track](https://exercism.org/tracks/java/exercises/pig-latin).\n\nThe application was created to experiment with the API-first approach: the OpenAPI specification was created first, then the code was generated for Spring, and finally, custom code was added that depends on the generated code.\n\n## Deployed Application\n\nThe application is deployed on Azure at [https://piglatin.azurewebsites.net](https://piglatin.azurewebsites.net).\n\nYou can use the simple [web interface](https://piglatin.azurewebsites.net) and the [Swagger UI](https://piglatin.azurewebsites.net/swagger-ui/index.html).\n\nPlease note that the application is deployed on the free-tier F1 plan. This means that if the application is in sleep mode, it may take about a minute for the first API call to wake it up. Subsequent API calls should be faster.\n\n## Source code\n\n[https://github.com/rabestro/pig-latin-rest](https://github.com/rabestro/pig-latin-rest)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10868211",
+		"_collection_link": "https://www.postman.com/blue-capsule-350316/workspace/pig-latin-translator/collection/10868211-f4eb9cca-60ab-45ed-b0bd-381c1422e272?action=share&source=collection_link&creator=10868211"
+	},
+	"item": [
+		{
+			"name": "Translate sentence to Pig Latin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response contains the translated pig-latin sentence\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.sentence).to.exist.and.to.be.a('string');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate translated sentence format\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.sentence).to.be.a('string');",
+							"    pm.expect(responseData.sentence).to.match(/^[a-zA-Z,\\s!]+$/);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sentence\": \"Hello, World!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/pig-latin",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pig-latin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "hello",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sentence\": \"Hello, World!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/pig-latin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pig-latin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Jan 2024 19:01:33 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sentence\": \"ellohay, orldway!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Untranslatable sentence",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 418\", function () {",
+							"    pm.expect(pm.response.code).to.equal(418);",
+							"});",
+							"",
+							"pm.test(\"Response body is null\", function () {",
+							"    const responseData = xml2Json(pm.response.text());",
+							"    pm.expect(responseData).to.be.null;",
+							"});",
+							"",
+							"pm.test(\"Verify that the response body is empty or null\", function () {",
+							"    const responseData = xml2Json(pm.response.text());",
+							"    ",
+							"    pm.expect(responseData).to.be.null;",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sentence\": \"$#±@%&!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/pig-latin",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"pig-latin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "symbols",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sentence\": \"$#±@%&!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/pig-latin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"pig-latin"
+							]
+						}
+					},
+					"status": "I'm a teapot",
+					"code": 418,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Jan 2024 19:17:03 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
