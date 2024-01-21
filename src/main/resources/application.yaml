@@ -7,3 +7,9 @@ server:
 springdoc:
   swagger-ui:
     url: /openapi.yaml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
