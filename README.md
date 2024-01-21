@@ -56,7 +56,7 @@ Successful test report:
 https://github.com/rabestro/pig-latin-rest/runs/20357669812
 
 Failed test report:
-https://github.com/rabestro/pig-latin-rest/runs/20211225193
+https://github.com/rabestro/pig-latin-rest/runs/20706167144#r0s1
 
 > [!NOTE]
 > Note - Bruno's script support might also be used for light test automation based on project specifics.
