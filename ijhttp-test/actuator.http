@@ -1,0 +1,11 @@
+### Actuator Main
+GET {{host}}/actuator
+
+### Actuator Health
+GET {{host}}/actuator/health
+
+### Actuator Beans
+GET {{host}}/actuator/beans
+
+### Actuator Info
+GET {{host}}/actuator/info

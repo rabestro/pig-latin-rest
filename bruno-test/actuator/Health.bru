@@ -1,0 +1,15 @@
+meta {
+  name: Server Health
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{host}}/actuator/health
+  body: none
+  auth: none
+}
+
+assert {
+  res.body.status: eq UP
+}
