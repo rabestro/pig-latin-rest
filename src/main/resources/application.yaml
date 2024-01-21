@@ -9,7 +9,37 @@ springdoc:
     url: /openapi.yaml
 
 management:
+  info:
+    java:
+      enabled: true
+    build:
+      enabled: true
+    env:
+      enabled: true
+    os:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
   endpoints:
     web:
       exposure:
         include: '*'
+  endpoint:
+    info:
+      enabled: true
+    health:
+      show-details: always
+      group:
+        my:
+          include:
+            - ping
+            - diskSpace
+
+info:
+  app:
+    name: @project.name@
+    description: @project.description@
+    source-code: @project.scm.url@
+    version: @project.version@
+    java-version: @java.version@

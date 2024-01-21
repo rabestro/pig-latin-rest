@@ -10,6 +10,14 @@ get {
   auth: none
 }
 
+vars:post-response {
+  disk: res.body.components.diskSpace
+}
+
 assert {
+  res.status: eq 200
   res.body.status: eq UP
+  disk.status: eq UP
+  disk.details.total: isNumber
+  disk.details.free: gt 0
 }
