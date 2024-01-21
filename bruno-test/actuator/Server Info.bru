@@ -1,0 +1,20 @@
+meta {
+  name: Server Info
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/actuator/info
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.app: isDefined
+  res.body.git: isDefined
+  res.body.build: isDefined
+  res.body.os: isDefined
+  res.body.java: isDefined 
+}

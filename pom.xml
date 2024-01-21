@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>lv.id.jc</groupId>
     <artifactId>pig-latin-rest</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <name>
         Pig Latin Translator
     </name>
     <description>
         The Pig Latin Translator is a REST application that translates English sentences into Pig Latin.
-        The application was developed using an API-first approach, starting with the creation of an OpenAPI specification.
+        The application was developed using an API-first approach, starting with the creation of an OpenAPI
+        specification.
         Code was then generated for Spring, and custom code was added that depends on the generated code.
-        The rules and instructions for the Pig Latin translation were obtained from the Pig Latin exercise on the Exercism Java Track.
+        The rules and instructions for the Pig Latin translation were obtained from the Pig Latin exercise on the
+        Exercism Java Track.
         The application is deployed on Azure and includes a simple web interface and a Swagger UI.
         It also includes API tests written with the Karate and Bruno frameworks.
     </description>
@@ -425,6 +427,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- The Maven Git Commit ID plugin -->
+            <plugin>
+                <groupId>io.github.git-commit-id</groupId>
+                <artifactId>git-commit-id-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
