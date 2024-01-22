@@ -31,10 +31,9 @@ management:
     health:
       show-details: always
       group:
-        my:
+        blog:
           include:
-            - ping
-            - diskSpace
+            - blog
 
 info:
   app:

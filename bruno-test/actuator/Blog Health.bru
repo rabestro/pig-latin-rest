@@ -1,0 +1,18 @@
+meta {
+  name: Blog Health
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{host}}/actuator/health/blog
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.status: eq UP
+  res.body.components: isDefined
+  res.body.components.blog: isDefined 
+}
