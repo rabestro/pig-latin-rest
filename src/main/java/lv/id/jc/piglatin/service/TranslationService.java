@@ -24,6 +24,12 @@ public class TranslationService {
         this.translationCounter = translationCounter;
     }
 
+    /**
+     * Translates a given text into Pig Latin.
+     *
+     * @param text The text to be translated.
+     * @return The translated text in Pig Latin.
+     */
     public String translate(String text) {
         translationCounter.incrementAndGet();
         return translator.apply(text.toLowerCase(Locale.ROOT));
