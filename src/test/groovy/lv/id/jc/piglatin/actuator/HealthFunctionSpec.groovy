@@ -3,9 +3,10 @@ package lv.id.jc.piglatin.actuator
 import org.springframework.boot.actuate.health.Health
 import org.springframework.http.HttpStatus
 import spock.lang.Specification
+import spock.lang.Subject
 
 class HealthFunctionSpec extends Specification {
-
+    @Subject
     HealthFunction healthFunction = new HealthFunction()
 
     def "should return UP when HTTP status code is 200"() {
@@ -16,7 +17,7 @@ class HealthFunctionSpec extends Specification {
         var health = healthFunction.apply(httpStatusCode)
 
         then:
-        health.status == Health.up().build().status
+        health == Health.up().build()
     }
 
     def "should return DOWN when HTTP status code is not 200"() {
