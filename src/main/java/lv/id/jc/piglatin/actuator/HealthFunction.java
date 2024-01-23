@@ -3,16 +3,13 @@ package lv.id.jc.piglatin.actuator;
 import java.util.function.IntFunction;
 
 import org.springframework.boot.actuate.health.Health;
-import org.springframework.stereotype.Component;
+import org.springframework.http.HttpStatus;
 
 /**
  * The HealthFunction class is an implementation of the IntFunction functional interface.
  * It is responsible for converting an HTTP status code into a Health object that represents the health of a service.
  */
-@Component
-public class HealthFunction implements IntFunction<Health> {
-    private static final int HTTP_OK_STATUS = 200;
-
+class HealthFunction implements IntFunction<Health> {
     /**
      * Converts an HTTP status code into a Health object that represents the health of a service.
      *
@@ -21,7 +18,7 @@ public class HealthFunction implements IntFunction<Health> {
      */
     @Override
     public Health apply(int code) {
-        if (code == HTTP_OK_STATUS) {
+        if (code == HttpStatus.OK.value()) {
             return Health.up().build();
         }
         return Health.down()
