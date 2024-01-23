@@ -265,8 +265,11 @@
                     <configuration>
                         <useFile>false</useFile>
                         <includes>
-                            <include>**/*Test</include>
-                            <include>**/*Spec</include>
+                            <include>**/*Spec.groovy</include>
+                            <include>**/*Test.groovy</include>
+                            <include>**/*IT.groovy</include>
+                            <include>**/*Test.java</include>
+                            <include>**/*IT.java</include>
                         </includes>
                         <statelessTestsetReporter
                             implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
