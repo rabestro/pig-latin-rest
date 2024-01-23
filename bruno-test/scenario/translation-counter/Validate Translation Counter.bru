@@ -1,0 +1,16 @@
+meta {
+  name: Validate Translation Counter
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{host}}/actuator/translationcount
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.count: eq 9
+}

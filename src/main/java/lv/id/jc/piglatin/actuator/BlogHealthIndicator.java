@@ -16,10 +16,6 @@ public class BlogHealthIndicator implements HealthIndicator {
     private final IntFunction<Health> healthFunction;
     private final IntSupplier statusCodeSupplier;
 
-    public BlogHealthIndicator() {
-        this(new StatusCodeSupplier(), new HealthFunction());
-    }
-
     public BlogHealthIndicator(IntSupplier statusCodeSupplier, IntFunction<Health> healthFunction) {
         this.healthFunction = healthFunction;
         this.statusCodeSupplier = statusCodeSupplier;
