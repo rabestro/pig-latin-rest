@@ -1,5 +1,7 @@
 package lv.id.jc.piglatin.actuator;
 
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -12,15 +14,12 @@ import java.util.function.IntSupplier;
  * This class is an implementation of the IntSupplier interface. It supplies an HTTP response code
  * by making a GET request to a specified base URL using an instance of HttpClient.
  */
-class StatusCodeSupplier implements IntSupplier {
+@Component
+public class StatusCodeSupplier implements IntSupplier {
     private static final String BASE_URL = "https://jc.id.lv/";
     private final HttpClient httpClient;
 
-    StatusCodeSupplier() {
-        this(HttpClient.newHttpClient());
-    }
-
-    StatusCodeSupplier(HttpClient httpClient) {
+    public StatusCodeSupplier(HttpClient httpClient) {
         this.httpClient = httpClient;
     }
 

@@ -1,0 +1,16 @@
+meta {
+  name: Second Check
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{host}}/actuator/translationcount
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.count: eq 2
+}

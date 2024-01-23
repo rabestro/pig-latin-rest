@@ -1,0 +1,32 @@
+meta {
+  name: Translate second sentence
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{host}}/pig-latin
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "sentence": "The quick brown fox jumps over the lazy dog."
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.sentence: isString
+  res.body.sentence: eq ethay ickquay ownbray oxfay umpsjay overay ethay azylay ogday.
+}
+
+docs {
+  Translate English sentence to Pig Latin
+}

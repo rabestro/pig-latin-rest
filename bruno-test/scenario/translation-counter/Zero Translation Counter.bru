@@ -1,0 +1,17 @@
+meta {
+  name: Zero Translation Counter
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{host}}/actuator/translationcount
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.count: isNumber
+  res.body.count: gte 0
+}
