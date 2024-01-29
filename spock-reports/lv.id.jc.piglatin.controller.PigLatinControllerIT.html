@@ -253,14 +253,14 @@ div.footer {
 </style>
 </head>
 <body>
-<h2>Report for lv.id.jc.piglatin.controller.PigLatinControllerSpec</h2>
+<h2>Report for lv.id.jc.piglatin.controller.PigLatinControllerIT</h2>
 <hr></hr>
 <div class='back-link'>
 <a href='index.html'>&lt;&lt; Back</a>
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Jan 23 15:37:28 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Mon Jan 29 11:23:45 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>3</td>
+<td>5</td>
+<td>5</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.053 seconds</td>
+<td>0.393 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -298,10 +298,16 @@ div.footer {
 <a href='#1641594895' class='feature-toc-pass'>translate method with valid TranslationRequest</a>
 </li>
 <li>
-<a href='#-480939659' class='feature-toc-pass'>can't translate empty text</a>
+<a href='#-64690083' class='feature-toc-pass'>can't translate '' [0]</a>
 </li>
 <li>
-<a href='#-602742881' class='feature-toc-pass'>translate method when TranslationService throws exception</a>
+<a href='#244123008' class='feature-toc-pass'>can't translate '   ' [1]</a>
+</li>
+<li>
+<a href='#-1314778625' class='feature-toc-pass'>can't translate '4572' [2]</a>
+</li>
+<li>
+<a href='#526022996' class='feature-toc-pass'>can't translate '%$#@&amp;' [3]</a>
 </li>
 </ul>
 <tr>
@@ -310,7 +316,7 @@ div.footer {
 <span>translate method with valid TranslationRequest</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.011 seconds)</div>
+<div class='ex-time'>(0.094 seconds)</div>
 </span>
 </div>
 </td>
@@ -320,9 +326,10 @@ div.footer {
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>def request = new TranslationRequest('apple')
-def response = new TranslationResponse('appleay')
-translationService.translate('apple') &gt;&gt; 'appleay'</pre>
+<pre class='block-source'>var request = MockMvcRequestBuilders
+    .post("/pig-latin")
+    .contentType(MediaType.APPLICATION_JSON)
+    .content('{"sentence":"apple"}')</pre>
 </td>
 </tr>
 <tr>
@@ -330,7 +337,7 @@ translationService.translate('apple') &gt;&gt; 'appleay'</pre>
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<pre class='block-source'>ResponseEntity&lt;TranslationResponse&gt; result = controller.translate(request)</pre>
+<pre class='block-source'>def response = mockMvc.perform(request).andReturn().response</pre>
 </td>
 </tr>
 <tr>
@@ -338,17 +345,19 @@ translationService.translate('apple') &gt;&gt; 'appleay'</pre>
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<pre class='block-source'>result.statusCode == HttpStatus.OK
-result.body == response</pre>
+<pre class='block-source'>with(response) {
+    status == HttpStatus.OK.value()
+    contentAsString == '{"sentence":"appleay"}'
+}</pre>
 </td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-480939659'>
-<span>can't translate empty text</span>
+<div class='feature-description' id='-64690083'>
+<span>can't translate '' [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
+<div class='ex-time'>(0.007 seconds)</div>
 </span>
 </div>
 </td>
@@ -358,8 +367,7 @@ result.body == response</pre>
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>def request = new TranslationRequest('')
-translationService.translate('') &gt;&gt; ''</pre>
+<pre class='block-source'>def payload = '{"sentence":"' + untranslatableExpression + '"}'</pre>
 </td>
 </tr>
 <tr>
@@ -367,7 +375,10 @@ translationService.translate('') &gt;&gt; ''</pre>
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<pre class='block-source'>ResponseEntity&lt;TranslationResponse&gt; result = controller.translate(request)</pre>
+<pre class='block-source'>def result = mockMvc.perform(MockMvcRequestBuilders
+    .post("/pig-latin")
+    .contentType(MediaType.APPLICATION_JSON)
+    .content(payload))</pre>
 </td>
 </tr>
 <tr>
@@ -375,13 +386,38 @@ translationService.translate('') &gt;&gt; ''</pre>
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<pre class='block-source'>result.statusCode == HttpStatus.I_AM_A_TEAPOT</pre>
+<pre class='block-source'>result.andExpect(MockMvcResultMatchers.status().isIAmATeapot())</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>untranslatableExpression</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'></td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0.007 seconds)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </td>
 </tr>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-602742881'>
-<span>translate method when TranslationService throws exception</span>
+<div class='feature-description' id='244123008'>
+<span>can't translate '   ' [1]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
 <div class='ex-time'>(0.002 seconds)</div>
@@ -394,8 +430,7 @@ translationService.translate('') &gt;&gt; ''</pre>
 <div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>def request = new TranslationRequest('apple')
-translationService.translate('apple') &gt;&gt; { throw new RuntimeException('Translation failed') }</pre>
+<pre class='block-source'>def payload = '{"sentence":"' + untranslatableExpression + '"}'</pre>
 </td>
 </tr>
 <tr>
@@ -403,7 +438,10 @@ translationService.translate('apple') &gt;&gt; { throw new RuntimeException('Tra
 <div class='block-kind'>When:</div>
 </td>
 <td>
-<pre class='block-source'>controller.translate(request)</pre>
+<pre class='block-source'>def result = mockMvc.perform(MockMvcRequestBuilders
+    .post("/pig-latin")
+    .contentType(MediaType.APPLICATION_JSON)
+    .content(payload))</pre>
 </td>
 </tr>
 <tr>
@@ -411,7 +449,158 @@ translationService.translate('apple') &gt;&gt; { throw new RuntimeException('Tra
 <div class='block-kind'>Then:</div>
 </td>
 <td>
-<pre class='block-source'>thrown RuntimeException</pre>
+<pre class='block-source'>result.andExpect(MockMvcResultMatchers.status().isIAmATeapot())</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>untranslatableExpression</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>   </td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0.002 seconds)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1314778625'>
+<span>can't translate '4572' [2]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.002 seconds)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def payload = '{"sentence":"' + untranslatableExpression + '"}'</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def result = mockMvc.perform(MockMvcRequestBuilders
+    .post("/pig-latin")
+    .contentType(MediaType.APPLICATION_JSON)
+    .content(payload))</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>result.andExpect(MockMvcResultMatchers.status().isIAmATeapot())</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>untranslatableExpression</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>4572</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0.002 seconds)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='526022996'>
+<span>can't translate '%$#@&amp;' [3]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.002 seconds)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def payload = '{"sentence":"' + untranslatableExpression + '"}'</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def result = mockMvc.perform(MockMvcRequestBuilders
+    .post("/pig-latin")
+    .contentType(MediaType.APPLICATION_JSON)
+    .content(payload))</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>result.andExpect(MockMvcResultMatchers.status().isIAmATeapot())</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>untranslatableExpression</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>%$#@&amp;</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0.002 seconds)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </td>
 </tr>
 </tbody>
