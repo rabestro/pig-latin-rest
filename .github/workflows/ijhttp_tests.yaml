@@ -16,14 +16,14 @@ jobs:
         uses: madhead/intellij-http-client-action@latest
         with:
           files: |-
-            ijhttp-test/smoke-test.http
-            ijhttp-test/body-json-to-json.http
-            ijhttp-test/body-text-to-json.http
-            ijhttp-test/body-xml-to-xml.http
-            ijhttp-test/bad-request.http
-            ijhttp-test/api-docs.http
+            http-client/smoke-test.http
+            http-client/body-json-to-json.http
+            http-client/body-text-to-json.http
+            http-client/body-xml-to-xml.http
+            http-client/bad-request.http
+            http-client/api-docs.http
 
-          env_file: ijhttp-test/http-client.env.json
+          env_file: http-client/http-client.env.json
           env: azure
           report: true
           insecure: true

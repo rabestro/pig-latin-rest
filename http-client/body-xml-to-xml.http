@@ -1,8 +1,10 @@
 ### Translate to Pig Latin (XML to XML)
 
-< {%
-    request.variables.set("text", "Hello, World!")
-%}
+#< {%
+#    request.variables.set("text", "Hello, World!")
+#%}
+
+@text = Hello, World!
 
 POST {{host}}/pig-latin
 Content-Type: application/xml
