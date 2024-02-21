@@ -1,0 +1,11 @@
+{{host}}/actuator/info
+
+?? status == 200
+?? body app exists
+?? body git exists
+?? body build exists
+?? body os exists
+?? body java exists
+?? body java.version startsWith 17
+?? body app.source-code endsWith pig-latin-rest
+?? body app.source-code contains rabestro

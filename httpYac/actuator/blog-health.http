@@ -1,0 +1,6 @@
+GET {{host}}/actuator/health/blog
+
+?? status == 200
+?? body status == UP
+?? body components exists
+?? body components.blog exists
