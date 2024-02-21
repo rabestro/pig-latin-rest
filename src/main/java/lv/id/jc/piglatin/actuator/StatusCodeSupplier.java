@@ -10,10 +10,6 @@ import java.net.http.HttpResponse;
 import java.util.function.IntSupplier;
 
 
-/**
- * This class is an implementation of the IntSupplier interface. It supplies an HTTP response code
- * by making a GET request to a specified base URL using an instance of HttpClient.
- */
 @Component
 public class StatusCodeSupplier implements IntSupplier {
     private static final String BASE_URL = "https://jc.id.lv/";

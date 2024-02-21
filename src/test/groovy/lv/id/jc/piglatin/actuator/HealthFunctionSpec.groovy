@@ -29,6 +29,6 @@ class HealthFunctionSpec extends Specification {
 
         then:
         health.status == Health.down().build().status
-        health.details.get("HTTP Status Code") == httpStatusCode
+        health.details.get("HTTP Status Code") as int == httpStatusCode
     }
 }
