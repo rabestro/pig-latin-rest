@@ -1,0 +1,15 @@
+### Translate to Pig Latin
+
+POST {{host}}/pig-latin
+Accept-Language: EN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "sentence": "Hello, World!"
+}
+
+?? status == 200
+?? header content-type == application/json
+?? body sentence exists
+?? body sentence == ellohay, orldway!

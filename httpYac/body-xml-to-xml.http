@@ -1,0 +1,18 @@
+### Translate to Pig Latin (XML to XML)
+
+@sentence = Hello, World!
+@expected = ellohay, orldway!
+
+POST {{host}}/pig-latin
+Content-Type: application/xml
+Accept: application/xml
+
+<TranslationRequest>
+    <sentence>{{sentence}}</sentence>
+</TranslationRequest>
+
+?? status == 200
+?? header content-type == application/xml
+?? xpath //sentence == {{expected}}
+
+
