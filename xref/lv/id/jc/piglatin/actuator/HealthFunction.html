@@ -14,28 +14,26 @@
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> org.springframework.http.HttpStatus;
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   <strong class="jxr_keyword">import</strong> org.springframework.stereotype.Component;
 <a class="jxr_linenumber" name="L8" href="#L8">8</a>   
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_javadoccomment"> * The HealthFunction class is an implementation of the IntFunction functional interface.</em>
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_javadoccomment"> * It is responsible for converting an HTTP status code into a Health object that represents the health of a service.</em>
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L13" href="#L13">13</a>  @Component
-<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="HealthFunction" href="../../../../../lv/id/jc/piglatin/actuator/HealthFunction.html#HealthFunction">HealthFunction</a> <strong class="jxr_keyword">implements</strong> IntFunction&lt;Health&gt; {
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_javadoccomment">     * Converts an HTTP status code into a Health object that represents the health of a service.</em>
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment">     * @param code the HTTP status code to be converted</em>
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  <em class="jxr_javadoccomment">     * @return a Health object representing the health of the service</em>
-<a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>      @Override
-<a class="jxr_linenumber" name="L22" href="#L22">22</a>      <strong class="jxr_keyword">public</strong> Health apply(<strong class="jxr_keyword">int</strong> code) {
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>          <strong class="jxr_keyword">if</strong> (code == HttpStatus.OK.value()) {
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>              <strong class="jxr_keyword">return</strong> Health.up().build();
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>          }
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>          <strong class="jxr_keyword">return</strong> Health.down()
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>              .withDetail(<span class="jxr_string">"HTTP Status Code"</span>, code)
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>              .build();
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>      }
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  }
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  @Component
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="HealthFunction" href="../../../../../lv/id/jc/piglatin/actuator/HealthFunction.html#HealthFunction">HealthFunction</a> <strong class="jxr_keyword">implements</strong> IntFunction&lt;Health&gt; {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_javadoccomment">     * Converts an HTTP status code into a Health object that represents the health of a service.</em>
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_javadoccomment">     * @param statusCode the HTTP status code to be converted</em>
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_javadoccomment">     * @return a Health object representing the health of the service</em>
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      @Override
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      <strong class="jxr_keyword">public</strong> Health apply(<strong class="jxr_keyword">int</strong> statusCode) {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>          <strong class="jxr_keyword">if</strong> (statusCode == HttpStatus.OK.value()) {
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>              <strong class="jxr_keyword">return</strong> Health.up().build();
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>          }
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>          <strong class="jxr_keyword">return</strong> Health.down()
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>              .withDetail(<span class="jxr_string">"HTTP Status Code"</span>, statusCode)
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>              .build();
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>      }
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2023&#x2013;2024 <a href="https://www.epam.com">EPAM Systems</a>. All rights reserved.</div>
