@@ -1,0 +1,5 @@
+{{host}}/actuator/translationcount
+
+?? status == 200
+?? body count isNumber
+?? body count >= 0
