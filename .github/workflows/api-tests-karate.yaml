@@ -1,10 +1,11 @@
-name: Karate API Tests
+name: API Tests - Karate
 
 on:
   workflow_dispatch:
 
 jobs:
   run_karate_api_test:
+    name: API Tests by Karate Framework
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
