@@ -8,6 +8,8 @@ permissions:
   contents: read
   actions: read
   checks: write
+  issues: read
+  pull-requests: write
 jobs:
   run_httpyac_api_tests:
     runs-on: ubuntu-latest
