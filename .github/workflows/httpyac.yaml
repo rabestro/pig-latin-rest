@@ -1,0 +1,35 @@
+# This workflow runs the API tests on the latest version of Ubuntu
+
+name: httpYac API Tests
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+  checks: write
+jobs:
+  run_httpyac_api_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies and run tests
+        run: |
+          cd httpYac
+          npm install
+          npm run test
+
+      - name: Publish Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()          # run this step even if previous step failed
+        with:
+          name: httpYac API Tests           # Name of the check run which will be created
+          path: httpYac/report.xml          # Path to test results
+          reporter: java-junit              # Format of test results
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            httpYac/**/*.xml
