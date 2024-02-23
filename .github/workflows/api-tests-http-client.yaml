@@ -1,4 +1,4 @@
-name: JetBrains HTTP Client API Tests
+name: API Tests - JetBrains HTTP Client
 
 on:
   workflow_dispatch:
@@ -36,3 +36,10 @@ jobs:
           name: JetBrains HTTP Client API Tests   # Name of the check run which will be created
           path: reports/report.xml                # Path to test results
           reporter: java-junit                    # Format of test results
+
+      - name: Publish API Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          check_name: API Tests by httpYac
+          junit_files: reports/report.xml

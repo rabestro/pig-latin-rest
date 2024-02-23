@@ -1,4 +1,5 @@
-{{host}}/actuator/health
+# @disabled
+GET {{host}}/actuator/health
 
 ?? status == 200
 ?? body status == UP

@@ -8,7 +8,8 @@
         "test": "httpyac ./actuator/* --all --env azure --junit --no-color > report.xml",
         "api": "httpyac ./*.http --all --env azure --output short --output-failed short",
         "scenario": "httpyac ./scenario/*.http --all --env azure --output short --output-failed short",
-        "api-test": "httpyac ./**/*.http --all --env azure --junit --no-color > report.xml"
+        "api-test": "httpyac ./**/*.http --all --env azure --junit --no-color > report.xml",
+        "json": "httpyac ./**/*.http --all --env azure --json --no-color > report.json"
     },
     "author": "Jegors Čemisovs. <jegors_cemisovs@epam.com>",
     "license": "MIT",
