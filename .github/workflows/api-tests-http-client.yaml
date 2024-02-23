@@ -29,17 +29,10 @@ jobs:
           report: true
           insecure: true
 
-      - name: Publish Test Report
+      - name: Publish API Test Report
         uses: dorny/test-reporter@v1
-        if: success() || failure()                # run this step even if previous step failed
+        if: success() || failure()
         with:
-          name: JetBrains HTTP Client API Tests   # Name of the check run which will be created
-          path: reports/report.xml                # Path to test results
-          reporter: java-junit                    # Format of test results
-
-      - name: Publish API Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          check_name: API Tests by httpYac
-          junit_files: reports/report.xml
+          name: JetBrains HTTP Client API Tests
+          path: reports/report.xml
+          reporter: java-junit
