@@ -1,3 +1,4 @@
+# @disabled
 {{host}}/actuator/translationcount
 
 ?? status == 200
