@@ -1,7 +1,5 @@
 package lv.id.jc.piglatin.actuator;
 
-import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -9,11 +7,16 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.function.IntSupplier;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 
 @Component
 public class StatusCodeSupplier implements IntSupplier {
-    private static final String BASE_URL = "https://jc.id.lv/";
     private final HttpClient httpClient;
+
+    @Value("${my-blog.url:https://jc.id.lv}")
+    private String blogUrl;
 
     public StatusCodeSupplier(HttpClient httpClient) {
         this.httpClient = httpClient;
@@ -27,7 +30,7 @@ public class StatusCodeSupplier implements IntSupplier {
      */
     @Override
     public int getAsInt() {
-        var request = HttpRequest.newBuilder().uri(URI.create(BASE_URL)).build();
+        var request = HttpRequest.newBuilder().uri(URI.create(blogUrl)).build();
         try {
             return httpClient.send(request, HttpResponse.BodyHandlers.ofString()).statusCode();
         } catch (IOException | InterruptedException e) {
