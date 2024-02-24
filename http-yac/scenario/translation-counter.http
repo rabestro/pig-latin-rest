@@ -1,4 +1,4 @@
-@sut = actuator/translationcount
+@sut = actuator/translation-count
 
 ### Reset Translation Counter
 DELETE {{host}}/{{sut}}
@@ -12,7 +12,6 @@ GET {{host}}/{{sut}}
 ?? body count == 0
 
 ### Translate first sentence
-# @description Translate "Hello, World!" to Pig Latin
 POST {{host}}/pig-latin
 Content-Type: application/json
 

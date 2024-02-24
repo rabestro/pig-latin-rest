@@ -42,3 +42,6 @@ info:
     source-code: @project.scm.url@
     version: @project.version@
     java-version: @java.version@
+
+my-blog:
+  url: https://jc.id.lv

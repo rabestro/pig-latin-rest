@@ -1,6 +1,7 @@
 {{host}}/actuator/info
 
 ?? status == 200
+?? header content-type matches application/.*json
 ?? body app exists
 ?? body git exists
 ?? body build exists
@@ -9,3 +10,4 @@
 ?? body java.version startsWith 17
 ?? body app.source-code endsWith pig-latin-rest
 ?? body app.source-code contains rabestro
+?? body os.name == Linux
