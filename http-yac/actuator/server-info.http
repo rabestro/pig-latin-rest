@@ -8,6 +8,6 @@
 ?? body os exists
 ?? body java exists
 ?? body java.version startsWith 17
-?? body app.source-code endsWith pig-latin-rest
-?? body app.source-code contains rabestro
+?? body app["source-code"] endsWith pig-latin-rest
+?? body app["source-code"] contains rabestro
 ?? body os.name == Linux
