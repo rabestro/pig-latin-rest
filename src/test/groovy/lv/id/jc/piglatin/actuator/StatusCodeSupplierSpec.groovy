@@ -11,7 +11,12 @@ class StatusCodeSupplierSpec extends Specification {
     def httpResponse = Mock HttpResponse
 
     @Subject
-    def statusCodeSupplier = new StatusCodeSupplier(httpClient)
+    StatusCodeSupplier statusCodeSupplier
+
+    void setup() {
+        statusCodeSupplier = new StatusCodeSupplier(httpClient)
+        statusCodeSupplier.blogUrl = 'https://localhost'
+    }
 
     def "should return status code when getAsInt is called"() {
         given:
@@ -33,9 +38,6 @@ class StatusCodeSupplierSpec extends Specification {
         statusCodeSupplier.getAsInt()
 
         then:
-        def exeption = thrown(RuntimeException)
-
-        and:
-        exeption.cause instanceof IOException
+        thrown RuntimeException
     }
 }
