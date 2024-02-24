@@ -275,6 +275,7 @@
                             <include>**/*Test.groovy</include>
                             <include>**/*IT.groovy</include>
                             <include>**/*Test.java</include>
+                            <include>**/*Spec.java</include>
                             <include>**/*IT.java</include>
                         </includes>
                         <statelessTestsetReporter
