@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class StatusCodeSupplier implements IntSupplier {
     private final HttpClient httpClient;
 
-    @Value("${my-blog.url:https://jc.id.lv}")
+    @Value("${my-blog.url:'https://jc.id.lv'}")
     private String blogUrl;
 
     public StatusCodeSupplier(HttpClient httpClient) {
@@ -30,8 +30,10 @@ public class StatusCodeSupplier implements IntSupplier {
      */
     @Override
     public int getAsInt() {
-        var request = HttpRequest.newBuilder().uri(URI.create(blogUrl)).build();
         try {
+            var request = HttpRequest.newBuilder()
+                .uri(URI.create(blogUrl))
+                .build();
             return httpClient.send(request, HttpResponse.BodyHandlers.ofString()).statusCode();
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
