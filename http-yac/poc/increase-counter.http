@@ -1,0 +1,17 @@
+@sut = actuator/translation-count
+
+### Read Translation Counter
+# @name translationCounter
+GET {{host}}/{{sut}}
+
+{{
+    translationCounter.count += 5
+}}
+
+### Set Translation Counter
+# @ref translationCounter
+
+POST {{host}}/{{sut}}
+Content-Type: application/json
+
+{{translationCounter}}

@@ -1,8 +1,7 @@
-# @disabled
 GET {{host}}/actuator/health
 
 ?? status == 200
 ?? body status == UP
 ?? body components.diskSpace.status == UP
-?? body components.diskSpace.details.total > 0
-?? body components.diskSpace.details.free > 0
+?? body components.diskSpace.details.total > 1
+?? body components.diskSpace.details.free > 1

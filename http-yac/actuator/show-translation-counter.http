@@ -1,6 +1,5 @@
-# @disabled
 {{host}}/actuator/translation-count
 
 ?? status == 200
 ?? body count isNumber
-?? body count >= 0
+?? body count > -1
