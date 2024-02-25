@@ -14,6 +14,6 @@
     "author": "Jegors Čemisovs. <jegors_cemisovs@epam.com>",
     "license": "MIT",
     "dependencies": {
-        "httpyac": "^6.11.3"
+        "httpyac": "^6.11.4"
     }
 }
