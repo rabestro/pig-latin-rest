@@ -10,6 +10,7 @@ jobs:
   install-hurl:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: gacts/install-hurl@v1
       - name: Install hurl and run tests
         run: |
