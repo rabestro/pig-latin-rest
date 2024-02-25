@@ -17,13 +17,4 @@ jobs:
           cd hurl
           hurl --test \
           --variable host=https://piglatin.azurewebsites.net \
-          --report-junit report.xml \
           translation-counter.hurl
-
-      - name: Publish Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: Hurl API Tests
-          path: hurl/report.xml
-          reporter: java-junit
