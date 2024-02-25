@@ -1,0 +1,27 @@
+name: API Tests - hurl
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+  checks: write
+jobs:
+  install-hurl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gacts/install-hurl@v1
+      - name: Install hurl and run tests
+        run: |
+          hurl --test \
+          --variable host=https://piglatin.azurewebsites.net \
+          --report-junit report.xml \
+          ./hurl/translation-counter.hurl
+
+      - name: Publish Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: hurl API Tests
+          path: report.xml
+          reporter: java-junit
