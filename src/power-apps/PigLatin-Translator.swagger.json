@@ -1,0 +1,106 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "PigLatin Translator",
+    "description": "This is a REST application that translates English sentences into Pig Latin. The rules and instructions for the Pig Latin translation were obtained from the Pig Latin exercise on the Exercism Java Track.",
+    "version": "1.0"
+  },
+  "host": "piglatin.azurewebsites.net",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/pig-latin": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sentence": {
+                  "type": "string",
+                  "description": "sentence"
+                }
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "Content-Type",
+                "type": "string"
+              },
+              "Accept": {
+                "description": "Accept",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "operationId": "translate",
+        "summary": "Translate a sentence in English into pig Latin",
+        "x-ms-visibility": "important",
+        "description": "Pig Latin is a made-up children's language that's intended to be confusing. It obeys a few simple rules, but when it's spoken quickly it's really difficult for non-children (and non-native speakers) to understand.",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sentence": {
+                  "type": "string",
+                  "description": "sentence"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/actuator/translation-count": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "count"
+                }
+              }
+            }
+          }
+        },
+        "operationId": "counter",
+        "summary": "Translation Counter",
+        "x-ms-visibility": "important",
+        "parameters": []
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}
