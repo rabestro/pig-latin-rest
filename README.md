@@ -38,10 +38,12 @@ Please note that the application is deployed on the free-tier F1 plan. This mean
 ## API Testing
 
 The application includes API tests written with frameworks:
-- Karate
-- Bruno
-- JetBrains HTTP Client
-- Apache jMeter
+- [Karate](https://www.karatelabs.io/)
+- [Bruno](https://www.usebruno.com/)
+- [Hurl](https://hurl.dev/)
+- [httpYac](https://httpyac.github.io/)
+- [JetBrains HTTP Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
+- [Apache jMeter](https://jmeter.apache.org/)
 
 ### Bruno
 
