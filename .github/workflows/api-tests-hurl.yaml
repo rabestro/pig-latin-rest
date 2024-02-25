@@ -1,4 +1,4 @@
-name: API Tests - hurl
+name: API Tests - Hurl
 
 on:
   workflow_dispatch:
@@ -13,15 +13,16 @@ jobs:
       - uses: gacts/install-hurl@v1
       - name: Install hurl and run tests
         run: |
+          cd hurl
           hurl --test \
           --variable host=https://piglatin.azurewebsites.net \
           --report-junit report.xml \
-          ./hurl/translation-counter.hurl
+          translation-counter.hurl
 
       - name: Publish Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: hurl API Tests
-          path: report.xml
+          name: Hurl API Tests
+          path: hurl/report.xml
           reporter: java-junit
