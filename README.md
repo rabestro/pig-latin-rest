@@ -83,3 +83,7 @@ To run the Karate API tests, use the following command:
 ```bash
 mvn clean test -Dtest=TestRunner
 ```
+
+### Performance Testing by Apache jMeter
+
+Load Test [Descriptive Summary/Conclusions](https://a.blazemeter.com/app/executive-summary/index.html?master_id=71758198&selectedTimeMeasure=milliseconds#/) and [Full Report](https://a.blazemeter.com/app/?public-token=N8EAygRaczgVrG5dVfzaiW08KETtECXvph3X6BDkXV6CoIi2pM#/accounts/1886840/workspaces/1958186/projects/2311430/masters/71758198/summary)
