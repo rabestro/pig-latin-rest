@@ -253,14 +253,14 @@ div.footer {
 </style>
 </head>
 <body>
-<h2>Report for lv.id.jc.piglatin.LoadContextTest</h2>
+<h2>Report for lv.id.jc.piglatin.actuator.HealthFunctionSpec</h2>
 <hr></hr>
 <div class='back-link'>
 <a href='index.html'>&lt;&lt; Back</a>
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Mar 05 22:28:53 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Tue Mar 05 22:28:54 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>1</td>
+<td>2</td>
+<td>2</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>1.788 seconds</td>
+<td>0.006 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -295,26 +295,88 @@ div.footer {
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#-1545674084' class='feature-toc-pass'>context loads</a>
+<a href='#-325494955' class='feature-toc-pass'>should return UP when HTTP status code is 200</a>
+</li>
+<li>
+<a href='#-593036639' class='feature-toc-pass'>should return DOWN when HTTP status code is not 200</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-1545674084'>
-<span>context loads</span>
+<div class='feature-description' id='-325494955'>
+<span>should return UP when HTTP status code is 200</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.495 seconds)</div>
+<div class='ex-time'>(0.002 seconds)</div>
 </span>
 </div>
 </td>
 </tr>
 <tr>
 <td>
-<div class='block-kind'>Expect:</div>
+<div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>applicationContext.isRunning()</pre>
+<pre class='block-source'>int httpStatusCode = 200</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>var health = healthFunction.apply httpStatusCode</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>health == Health.up().build()</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-593036639'>
+<span>should return DOWN when HTTP status code is not 200</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.001 seconds)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>int httpStatusCode = 404</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>var health = healthFunction.apply httpStatusCode</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>health.status == Health.down().build().status</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>health.details.get("HTTP Status Code") as int == httpStatusCode</pre>
 </td>
 </tr>
 </tbody>

@@ -253,14 +253,14 @@ div.footer {
 </style>
 </head>
 <body>
-<h2>Report for lv.id.jc.piglatin.LoadContextTest</h2>
+<h2>Report for lv.id.jc.piglatin.service.TranslationCountEndpointSpec</h2>
 <hr></hr>
 <div class='back-link'>
 <a href='index.html'>&lt;&lt; Back</a>
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Mar 05 22:28:53 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Tue Mar 05 22:28:54 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>1</td>
+<td>3</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>1.788 seconds</td>
+<td>0.005 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -295,26 +295,126 @@ div.footer {
 <tbody>
 <ul id='toc'>
 <li>
-<a href='#-1545674084' class='feature-toc-pass'>context loads</a>
+<a href='#487445356' class='feature-toc-pass'>should return count</a>
+</li>
+<li>
+<a href='#-2091530844' class='feature-toc-pass'>should set count</a>
+</li>
+<li>
+<a href='#-687810543' class='feature-toc-pass'>should reset count</a>
 </li>
 </ul>
 <tr>
 <td colspan='10'>
-<div class='feature-description' id='-1545674084'>
-<span>context loads</span>
+<div class='feature-description' id='487445356'>
+<span>should return count</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.495 seconds)</div>
+<div class='ex-time'>(0.001 seconds)</div>
 </span>
 </div>
 </td>
 </tr>
 <tr>
 <td>
-<div class='block-kind'>Expect:</div>
+<div class='block-kind'>Given:</div>
 </td>
 <td>
-<pre class='block-source'>applicationContext.isRunning()</pre>
+<pre class='block-source'>counterService.set(1)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def result = endpoint.count()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>result == [count: 1]</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2091530844'>
+<span>should set count</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>counterService.set(0)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>def result = endpoint.set(2)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>counterService.get() == 2</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>And:</div>
+</td>
+<td>
+<pre class='block-source'>result == [count: 2]</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-687810543'>
+<span>should reset count</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>counterService.set(9)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>endpoint.reset()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>counterService.get() == 0</pre>
 </td>
 </tr>
 </tbody>
