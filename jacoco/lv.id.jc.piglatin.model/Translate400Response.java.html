@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Translate400Response.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Pig Latin Translator</a> &gt; <a href="index.source.html" class="el_package">lv.id.jc.piglatin.model</a> &gt; <span class="el_source">Translate400Response.java</span></div><h1>Translate400Response.java</h1><pre class="source lang-java linenums">package lv.id.jc.piglatin.model;
+
+import java.net.URI;
+import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.OffsetDateTime;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.openapitools.jackson.nullable.JsonNullable;
+import java.time.OffsetDateTime;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
+import java.util.*;
+import jakarta.annotation.Generated;
+
+/**
+ * Translate400Response
+ */
+
+@JsonTypeName(&quot;translate_400_response&quot;)
+@Generated(value = &quot;org.openapitools.codegen.languages.SpringCodegen&quot;, date = &quot;2024-03-08T23:58:28.481269+02:00[Europe/Riga]&quot;)
+<span class="nc" id="L26">public class Translate400Response {</span>
+
+  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+  private OffsetDateTime timestamp;
+
+  private Integer status;
+
+  private String error;
+
+  private String path;
+
+  public Translate400Response timestamp(OffsetDateTime timestamp) {
+<span class="nc" id="L38">    this.timestamp = timestamp;</span>
+<span class="nc" id="L39">    return this;</span>
+  }
+
+  /**
+   * The date and time of the error.
+   * @return timestamp
+  */
+  @Valid 
+  @Schema(name = &quot;timestamp&quot;, example = &quot;2021-08-15T12:34:56.789Z&quot;, description = &quot;The date and time of the error.&quot;, requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty(&quot;timestamp&quot;)
+  public OffsetDateTime getTimestamp() {
+<span class="nc" id="L50">    return timestamp;</span>
+  }
+
+  public void setTimestamp(OffsetDateTime timestamp) {
+<span class="nc" id="L54">    this.timestamp = timestamp;</span>
+<span class="nc" id="L55">  }</span>
+
+  public Translate400Response status(Integer status) {
+<span class="nc" id="L58">    this.status = status;</span>
+<span class="nc" id="L59">    return this;</span>
+  }
+
+  /**
+   * The HTTP status code.
+   * @return status
+  */
+  
+  @Schema(name = &quot;status&quot;, example = &quot;400&quot;, description = &quot;The HTTP status code.&quot;, requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty(&quot;status&quot;)
+  public Integer getStatus() {
+<span class="nc" id="L70">    return status;</span>
+  }
+
+  public void setStatus(Integer status) {
+<span class="nc" id="L74">    this.status = status;</span>
+<span class="nc" id="L75">  }</span>
+
+  public Translate400Response error(String error) {
+<span class="nc" id="L78">    this.error = error;</span>
+<span class="nc" id="L79">    return this;</span>
+  }
+
+  /**
+   * The error message.
+   * @return error
+  */
+  
+  @Schema(name = &quot;error&quot;, example = &quot;Bad Request&quot;, description = &quot;The error message.&quot;, requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty(&quot;error&quot;)
+  public String getError() {
+<span class="nc" id="L90">    return error;</span>
+  }
+
+  public void setError(String error) {
+<span class="nc" id="L94">    this.error = error;</span>
+<span class="nc" id="L95">  }</span>
+
+  public Translate400Response path(String path) {
+<span class="nc" id="L98">    this.path = path;</span>
+<span class="nc" id="L99">    return this;</span>
+  }
+
+  /**
+   * The request path.
+   * @return path
+  */
+  
+  @Schema(name = &quot;path&quot;, example = &quot;/pig-latin&quot;, description = &quot;The request path.&quot;, requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty(&quot;path&quot;)
+  public String getPath() {
+<span class="nc" id="L110">    return path;</span>
+  }
+
+  public void setPath(String path) {
+<span class="nc" id="L114">    this.path = path;</span>
+<span class="nc" id="L115">  }</span>
+
+  @Override
+  public boolean equals(Object o) {
+<span class="nc bnc" id="L119" title="All 2 branches missed.">    if (this == o) {</span>
+<span class="nc" id="L120">      return true;</span>
+    }
+<span class="nc bnc" id="L122" title="All 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L123">      return false;</span>
+    }
+<span class="nc" id="L125">    Translate400Response translate400Response = (Translate400Response) o;</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">    return Objects.equals(this.timestamp, translate400Response.timestamp) &amp;&amp;</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">        Objects.equals(this.status, translate400Response.status) &amp;&amp;</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">        Objects.equals(this.error, translate400Response.error) &amp;&amp;</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">        Objects.equals(this.path, translate400Response.path);</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="nc" id="L134">    return Objects.hash(timestamp, status, error, path);</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="nc" id="L139">    StringBuilder sb = new StringBuilder();</span>
+<span class="nc" id="L140">    sb.append(&quot;class Translate400Response {\n&quot;);</span>
+<span class="nc" id="L141">    sb.append(&quot;    timestamp: &quot;).append(toIndentedString(timestamp)).append(&quot;\n&quot;);</span>
+<span class="nc" id="L142">    sb.append(&quot;    status: &quot;).append(toIndentedString(status)).append(&quot;\n&quot;);</span>
+<span class="nc" id="L143">    sb.append(&quot;    error: &quot;).append(toIndentedString(error)).append(&quot;\n&quot;);</span>
+<span class="nc" id="L144">    sb.append(&quot;    path: &quot;).append(toIndentedString(path)).append(&quot;\n&quot;);</span>
+<span class="nc" id="L145">    sb.append(&quot;}&quot;);</span>
+<span class="nc" id="L146">    return sb.toString();</span>
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+<span class="nc bnc" id="L154" title="All 2 branches missed.">    if (o == null) {</span>
+<span class="nc" id="L155">      return &quot;null&quot;;</span>
+    }
+<span class="nc" id="L157">    return o.toString().replace(&quot;\n&quot;, &quot;\n    &quot;);</span>
+  }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
