@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Tue Mar 05 22:28:53 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Fri Mar 08 23:08:05 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -281,7 +281,7 @@ div.footer {
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.096 seconds</td>
+<td>0.117 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -359,7 +359,7 @@ So that I can translate them to Pig Latin</pre>
 <span>has violations for '' (Empty string) [0]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.029 seconds)</div>
+<div class='ex-time'>(0.030 seconds)</div>
 </span>
 </div>
 </td>
@@ -433,7 +433,7 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>Empty string</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.029 seconds)</span>
+<span class='ex-time'>(0.030 seconds)</span>
 </td>
 </tr>
 </tbody>
@@ -447,7 +447,7 @@ So that I can translate them to Pig Latin</pre>
 <span>has violations for ' ' (Whitespace) [1]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.001 seconds)</div>
+<div class='ex-time'>(0.003 seconds)</div>
 </span>
 </div>
 </td>
@@ -521,7 +521,7 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>Whitespace</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.001 seconds)</span>
+<span class='ex-time'>(0.003 seconds)</span>
 </td>
 </tr>
 </tbody>
@@ -623,7 +623,7 @@ So that I can translate them to Pig Latin</pre>
 <span>has violations for 'null' (Null word) [3]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.001 seconds)</div>
+<div class='ex-time'>(0.002 seconds)</div>
 </span>
 </div>
 </td>
@@ -697,7 +697,7 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>Null word</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.001 seconds)</span>
+<span class='ex-time'>(0.002 seconds)</span>
 </td>
 </tr>
 </tbody>
@@ -799,7 +799,7 @@ So that I can translate them to Pig Latin</pre>
 <span>has violations for 'apple!' (Word with special characters) [5]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.001 seconds)</div>
+<div class='ex-time'>(0.002 seconds)</div>
 </span>
 </div>
 </td>
@@ -873,7 +873,7 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>Word with special characters</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.001 seconds)</span>
+<span class='ex-time'>(0.002 seconds)</span>
 </td>
 </tr>
 </tbody>
@@ -1675,7 +1675,7 @@ So that I can translate them to Pig Latin</pre>
 <span>no violations for äpple [2]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
-<div class='ex-time'>(0.001 seconds)</div>
+<div class='ex-time'>(0.002 seconds)</div>
 </span>
 </div>
 </td>
@@ -1747,7 +1747,7 @@ So that I can translate them to Pig Latin</pre>
 <td class='ex-value'>äpple</td>
 <td class='ex-result'>
 <span>OK</span>
-<span class='ex-time'>(0.001 seconds)</span>
+<span class='ex-time'>(0.002 seconds)</span>
 </td>
 </tr>
 </tbody>
@@ -1759,92 +1759,6 @@ So that I can translate them to Pig Latin</pre>
 <td colspan='10'>
 <div class='feature-description' id='-706290635'>
 <span>no violations for ApPlE [3]</span>
-<span class='return-toc'>
-<a href='#toc'>Return</a>
-<div class='ex-time'>(0)</div>
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Given:</div>
-</td>
-<td>
-<div class='block-text'>we create a bean with a valid word</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>var bean = new TestBean(word)</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>When:</div>
-</td>
-<td>
-<div class='block-text'>we validate the bean</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>var violations = validator.validate(bean)</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Then:</div>
-</td>
-<td>
-<div class='block-text'>there are no violations</div>
-</td>
-</tr>
-<tr>
-<td></td>
-<td>
-<pre class='block-source'>violations.isEmpty()</pre>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Where:</div>
-</td>
-<td>
-<div class='block-text'>we test different valid words</div>
-</td>
-</tr>
-<tr>
-<td>
-<div class='block-kind'>Examples:</div>
-</td>
-<td>
-<div class='spec-examples'>
-<table class='ex-table'>
-<thead>
-<tr>
-<th class='ex-header'>word</th>
-</tr>
-</thead>
-<tbody>
-<tr class='ex-pass'>
-<td class='ex-value'>ApPlE</td>
-<td class='ex-result'>
-<span>OK</span>
-<span class='ex-time'>(0)</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan='10'>
-<div class='feature-description' id='200753467'>
-<span>no violations for a [4]</span>
 <span class='return-toc'>
 <a href='#toc'>Return</a>
 <div class='ex-time'>(0.001 seconds)</div>
@@ -1916,10 +1830,96 @@ So that I can translate them to Pig Latin</pre>
 </thead>
 <tbody>
 <tr class='ex-pass'>
-<td class='ex-value'>a</td>
+<td class='ex-value'>ApPlE</td>
 <td class='ex-result'>
 <span>OK</span>
 <span class='ex-time'>(0.001 seconds)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='200753467'>
+<span>no violations for a [4]</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>we create a bean with a valid word</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>var bean = new TestBean(word)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>we validate the bean</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>var violations = validator.validate(bean)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>there are no violations</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<pre class='block-source'>violations.isEmpty()</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>we test different valid words</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<tr>
+<th class='ex-header'>word</th>
+</tr>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>a</td>
+<td class='ex-result'>
+<span>OK</span>
+<span class='ex-time'>(0)</span>
 </td>
 </tr>
 </tbody>
