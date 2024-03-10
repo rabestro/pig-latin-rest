@@ -43,5 +43,5 @@ info:
     version: @project.version@
     java-version: @java.version@
 
-my-blog:
+blog:
   url: https://jc.id.lv

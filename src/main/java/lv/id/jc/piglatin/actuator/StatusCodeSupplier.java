@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class StatusCodeSupplier implements IntSupplier {
     private final HttpClient httpClient;
 
-    @Value("${my-blog.url:'https://jc.id.lv'}")
+    @Value("${blog.url:'https://jc.id.lv'}")
     private String blogUrl;
 
     public StatusCodeSupplier(HttpClient httpClient) {
