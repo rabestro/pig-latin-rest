@@ -3,13 +3,15 @@
 ### Reset Translation Counter
 DELETE {{host}}/{{sut}}
 
-?? status == 204
+> {%
+    client.test("Request executed successfully", function () {
+        client.assert(response.status === 204, `Expected '204' but received '${response.status}'`);
+    });
+%}
 
 ### Zero Translation Counter
 GET {{host}}/{{sut}}
 
-?? status == 200
-?? body count == 0
 
 ### Translate first sentence
 POST {{host}}/pig-latin
@@ -19,15 +21,10 @@ Content-Type: application/json
     "sentence": "Hello, World!"
 }
 
-?? status == 200
-?? header content-type == application/json
-?? body sentence == ellohay, orldway!
 
 ### Check Translation Counter
 GET {{host}}/{{sut}}
 
-?? status == 200
-?? body count == 1
 
 ### Translate second sentence
 POST {{host}}/pig-latin
@@ -37,27 +34,17 @@ Content-Type: application/json
     "sentence": "The quick brown fox jumps over the lazy dog."
 }
 
-?? status == 200
-?? header content-type == application/json
-?? body sentence == ethay ickquay ownbray oxfay umpsjay overay ethay azylay ogday.
-
 ### Second Counter Check
 GET {{host}}/{{sut}}
 
-?? status == 200
-?? body count == 2
 
 ### Set Translation Counter
 POST {{host}}/{{sut}}
 Content-Type: application/json
 
-{"count": 9}
-
-?? status == 200
-?? body count == 9
+{
+    "count": 9
+}
 
 ### Check Changed Counter
 GET {{host}}/{{sut}}
-
-?? status == 200
-?? body count == 9

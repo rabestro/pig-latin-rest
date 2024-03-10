@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * It provides methods for reading, setting, and resetting the translation count.
  */
 @Component
-@Endpoint(id = "translation-count")
+@Endpoint(id = "count")
 public class TranslationCountEndpoint {
 
     private final AtomicInteger counterService;

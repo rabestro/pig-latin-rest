@@ -1,4 +1,4 @@
-@sut = actuator/translation-count
+@sut = actuator/count
 
 ### Read Translation Counter
 GET {{host}}/{{sut}}
