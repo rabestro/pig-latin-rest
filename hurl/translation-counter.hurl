@@ -1,9 +1,9 @@
 # Reset Translation Counter
-DELETE {{host}}/actuator/translation-count
+DELETE {{host}}/actuator/count
 HTTP 204
 
 # Zero Translation Counter
-GET {{host}}/actuator/translation-count
+GET {{host}}/actuator/count
 HTTP 200
 [Asserts]
 header "Content-Type" contains "json"
