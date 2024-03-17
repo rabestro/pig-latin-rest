@@ -1,4 +1,4 @@
-@sut = actuator/count
+@sut = actuator/counter
 
 ### Reset Translation Counter
 DELETE {{host}}/{{sut}}
