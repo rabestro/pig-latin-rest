@@ -1,4 +1,4 @@
-@sut = actuator/translation-count
+@sut = actuator/counter
 
 ### Read Translation Counter
 # @name translationCounter

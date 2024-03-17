@@ -1,3 +1,3 @@
-DELETE {{host}}/actuator/translation-count
+DELETE {{host}}/actuator/counter
 
 ?? status == 204

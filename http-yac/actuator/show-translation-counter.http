@@ -1,4 +1,4 @@
-{{host}}/actuator/translation-count
+{{host}}/actuator/counter
 
 ?? status == 200
 ?? body count isNumber

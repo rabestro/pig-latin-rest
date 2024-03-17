@@ -89,7 +89,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <groovy.version>4.0.18</groovy.version>
+        <groovy.version>4.0.20</groovy.version>
 
         <swagger-api.version>2.2.20</swagger-api.version>
         <swagger-ui.version>5.10.3</swagger-ui.version>
@@ -536,38 +536,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>com.lazerycode.jmeter</groupId>
-                <artifactId>jmeter-maven-plugin</artifactId>
-                <executions>
-                    <!-- Generate JMeter configuration -->
-                    <execution>
-                        <id>configuration</id>
-                        <goals>
-                            <goal>configure</goal>
-                        </goals>
-                    </execution>
-                    <!-- Run JMeter tests -->
-                    <execution>
-                        <id>jmeter-tests</id>
-                        <goals>
-                            <goal>jmeter</goal>
-                        </goals>
-                    </execution>
-                    <!-- Fail build on errors in test -->
-                    <execution>
-                        <id>jmeter-check-results</id>
-                        <goals>
-                            <goal>results</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <generateReports>true</generateReports>
-                    <jmeterVersion>5.6.3</jmeterVersion>
-                </configuration>
             </plugin>
         </plugins>
     </build>
