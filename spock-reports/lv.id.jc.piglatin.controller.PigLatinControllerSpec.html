@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Sun Mar 17 11:07:08 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Sun Mar 17 12:36:20 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>0</td>
+<td>3</td>
+<td>3</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100.0%</td>
-<td>0.045 seconds</td>
+<td>0.059 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -293,7 +293,127 @@ div.footer {
 <col class='block-text-col'></col>
 </colgroup>
 <tbody>
-<ul id='toc'></ul>
+<ul id='toc'>
+<li>
+<a href='#1641594895' class='feature-toc-pass'>translate method with valid TranslationRequest</a>
+</li>
+<li>
+<a href='#-480939659' class='feature-toc-pass'>can't translate empty text</a>
+</li>
+<li>
+<a href='#-602742881' class='feature-toc-pass'>translate method when TranslationService throws exception</a>
+</li>
+</ul>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1641594895'>
+<span>translate method with valid TranslationRequest</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.013 seconds)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def request = new TranslationRequest('apple')
+def response = new TranslationResponse('appleay')
+translationService.translate('apple') &gt;&gt; 'appleay'</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>ResponseEntity&lt;TranslationResponse&gt; result = controller.translate(request)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>result.statusCode == HttpStatus.OK
+result.body == response</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-480939659'>
+<span>can't translate empty text</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def request = new TranslationRequest('')
+translationService.translate('') &gt;&gt; ''</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>ResponseEntity&lt;TranslationResponse&gt; result = controller.translate(request)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>result.statusCode == HttpStatus.I_AM_A_TEAPOT</pre>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-602742881'>
+<span>translate method when TranslationService throws exception</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.002 seconds)</div>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<pre class='block-source'>def request = new TranslationRequest('apple')
+translationService.translate('apple') &gt;&gt; { throw new RuntimeException('Translation failed') }</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<pre class='block-source'>controller.translate(request)</pre>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<pre class='block-source'>thrown RuntimeException</pre>
+</td>
+</tr>
 </tbody>
 </table>
 <hr></hr>

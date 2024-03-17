@@ -260,7 +260,7 @@ div.footer {
 </div>
 <div class='summary-report'>
 <h3>Summary:</h3>
-<div class='date-test-ran'>Created on Sun Mar 17 11:07:07 EET 2024 by jegors</div>
+<div class='date-test-ran'>Created on Sun Mar 17 12:36:19 EET 2024 by jegors</div>
 <table class='summary-table'>
 <thead>
 <tr>
@@ -275,13 +275,13 @@ div.footer {
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>0</td>
-<td>0</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
-<td>0.0%</td>
-<td>0.743 seconds</td>
+<td>0</td>
+<td>0</td>
+<td>100.0%</td>
+<td>1.904 seconds</td>
 </tr>
 </tbody>
 </table>
@@ -293,19 +293,28 @@ div.footer {
 <col class='block-text-col'></col>
 </colgroup>
 <tbody>
-<ul id='toc'></ul>
-<tr>
-<td colspan='10'>
-<div class='problem-description'>
-<div class='problem-header'>Cleanup Error:</div>
-<div class='problem-list'>
-<ul>
+<ul id='toc'>
 <li>
-<pre>java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@7d64a960 testClass = lv.id.jc.piglatin.LoadContextTest, locations = [], classes = [lv.id.jc.piglatin.PigLatinRestApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@a619c2, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3b152928, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@d02f8d, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@6579c3d9, org.spockframework.spring.mock.SpockContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@b958beab], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]</pre>
+<a href='#-1545674084' class='feature-toc-pass'>context loads</a>
 </li>
 </ul>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1545674084'>
+<span>context loads</span>
+<span class='return-toc'>
+<a href='#toc'>Return</a>
+<div class='ex-time'>(0.499 seconds)</div>
+</span>
 </div>
-</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<pre class='block-source'>applicationContext.isRunning()</pre>
 </td>
 </tr>
 </tbody>
