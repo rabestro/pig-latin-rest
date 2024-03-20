@@ -92,7 +92,7 @@
         <groovy.version>4.0.20</groovy.version>
 
         <swagger-api.version>2.2.20</swagger-api.version>
-        <swagger-ui.version>5.10.3</swagger-ui.version>
+        <swagger-ui.version>5.11.8</swagger-ui.version>
         <springdoc.version>2.3.0</springdoc.version>
         <karate.version>1.4.1</karate.version>
 
@@ -278,8 +278,7 @@
                             <include>**/*Spec.java</include>
                             <include>**/*IT.java</include>
                         </includes>
-                        <statelessTestsetReporter
-                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+                        <statelessTestsetReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
                             <disable>false</disable>
                             <version>3.0</version>
                             <usePhrasedFileName>false</usePhrasedFileName>
@@ -326,8 +325,7 @@
                         <includes>
                             <include>**/*IT</include>
                         </includes>
-                        <statelessTestsetReporter
-                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+                        <statelessTestsetReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
                             <disable>false</disable>
                             <version>3.0</version>
                             <usePhrasedFileName>false</usePhrasedFileName>
@@ -335,8 +333,7 @@
                             <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
                             <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
                         </statelessTestsetReporter>
-                        <statelessTestsetInfoReporter
-                            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
+                        <statelessTestsetInfoReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5StatelessTestsetInfoReporter">
                             <disable>false</disable>
                             <usePhrasedFileName>false</usePhrasedFileName>
                             <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
