@@ -92,8 +92,8 @@
         <groovy.version>4.0.20</groovy.version>
 
         <swagger-api.version>2.2.20</swagger-api.version>
-        <swagger-ui.version>5.11.10</swagger-ui.version>
         <springdoc.version>2.5.0</springdoc.version>
+        <swagger-ui.version>5.13.0</swagger-ui.version>
         <karate.version>1.4.1</karate.version>
 
         <sonar.language>java,groovy,xml</sonar.language>
