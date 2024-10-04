@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: $(azureSubscription)
+  azureSubscription: 'f45b9eaa-1fc8-44ce-9161-4748a34121a8'
 
   # Web app name
   webAppName: 'piglatin'
